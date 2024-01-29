@@ -4,7 +4,7 @@ import "./event.css";
 
 function CreateEventForm() {
   const [eName, setEname] = useState('');
-  const [eImage, setEimage] = useState('');
+  const [eImage, setEimage] = useState([]);
   const [eMonth, setEmonth] = useState('');
   const [eDay, setEday] = useState('');
   const [ePreview, setEpreview] = useState('');

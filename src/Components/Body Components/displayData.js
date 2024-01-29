@@ -1,6 +1,7 @@
 import React from 'react';
 import "./displayData.css";
-import Back from '../images/bg-img.png';
+// import Back from '../images/bg-img.png';
+import { Link } from 'react-router-dom';
 const DisplayData = () => {
   const storedDetails = localStorage.getItem('events');
   const details = JSON.parse(storedDetails);
@@ -13,7 +14,7 @@ const DisplayData = () => {
           {details.map((event, index) => (
             <p key={index}  className='events'>
               {/* <p>Event {index + 1}:</p> */}
-              <img className='image' src={Back} alt=''/>
+              <img className='image' src={process.env.PUBLIC_URL + `/images/${event.eImage}`} alt=''/>
               <div className='displays'>
               <div>
                 <h4>{event.eMonth}</h4>
@@ -28,7 +29,7 @@ const DisplayData = () => {
           ))}
         </ol>
       ) : (
-        <p>No user details available</p>
+        <p><Link to={'/signUp'}>Get Started</Link></p>
       )}
     </div>
   );
