@@ -1,0 +1,72 @@
+.CE h1{
+    position: absolute;
+    top: 15%;
+    left: 30%;
+    transform: translate(10%, 30%);
+}
+
+.CEform{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 3rem;
+    width: 20%;
+    height: 100vh;
+    position: absolute;
+    top: 70%;
+    left: 45%;
+    transform: translate(-60%, -45%);
+    gap: 10px;
+    z-index: -1;
+}
+
+.CEform input{
+    width: 150%;
+    height: 7vh;
+    flex-shrink: 0;
+    border: 0.5rem solid brown;
+    background: #FFF;
+}
+
+.CEform select{
+    width: 4rem;
+}
+
+.CE-Button{
+    position: absolute;
+    top: 90%;
+    right: 0%;
+    transform: translate(10%, 10%);
+    margin: 1rem;
+    padding: 1rem 1.5rem;
+    border: none;
+    background-color: brown;
+    color: #000;
+    border-radius: 0.5rem;
+    text-decoration: none;
+}
+
+.CE-Button:hover{
+    border-radius: 4px;
+    text-decoration: underline;
+    color: #fff;
+}
+
+@media screen and (max-width: 850px) {
+    .CEform{
+        margin-top: 3rem;
+        width: 50%;
+    }
+    .CE h1{
+        position: absolute;
+        top: 15%;
+        left: 25%;
+        transform: translate(20%, 30%);
+        font-size: 1rem;
+        margin-top: 3rem;
+    }
+
+    .CE-Button{
+        top: 100%;
+    }
+}

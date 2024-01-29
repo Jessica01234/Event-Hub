@@ -1,0 +1,95 @@
+        /* NAVBAR STYLING */
+.NavbarItems{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    /* position: fixed; */
+    z-index: 1000;
+}
+
+.NavLogo{
+    text-decoration: none;
+   font-size: 3.5rem;
+   cursor: pointer;
+}
+
+.NavbarMenu{
+    display: grid;
+    grid-template-columns: repeat(6,auto);
+    grid-gap: 10px;
+    list-style: none;
+    align-items: center;
+    z-index: 1000;
+}
+
+.NavLinks{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.7rem 1rem;
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    line-height: normal;
+}
+
+.menuBar{
+    height: 60px;
+}
+
+.menuTimes{
+    height: 60px;
+}
+
+
+.MenuIcons{
+    display: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width:850px) {
+    .NavLogo{
+        font-size: 2rem;
+    }
+    /* .NavbarItems{
+        z-index: 99;
+    } */
+    .NavbarMenu{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+        height: auto;
+        background: #fff;
+        position: absolute;
+        top: 0;
+        left: -100%;
+        opacity: 0;
+        /* align-items: stretch; */
+        padding: 80px 0 30px 0;
+        margin: 0;
+        transition: 0.3s ease-in-out;
+        border-radius: 13px;
+    }
+
+    .NavbarMenu.active{
+        left: 0;
+        z-index: -1;
+        opacity: 1;
+        transition: 0.3s ease-in-out;
+    }
+
+    .NavLinks{
+        display: block;
+        width: 100%;
+        font-size: 1.2rem;
+        padding: 2rem 0;
+    }
+    
+    .MenuIcons{
+        display: block;
+    }
+}

@@ -1,0 +1,68 @@
+.signUp h1{
+    position: absolute;
+    top: 15%;
+    left: 33%;
+    transform: translate(10%, 30%);
+}
+
+.formSignup{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 20%;
+    position: absolute;
+    top: 70%;
+    left: 45%;
+    transform: translate(-60%, -45%);
+    gap: 10px;
+}
+
+.formSignup input{
+    width: 150%;
+    height: 7vh;
+    flex-shrink: 0;
+    border: 0.5rem solid brown;
+    background: #FFF;
+}
+
+.formSignup select{
+    width: 4rem;
+}
+
+.signup-Button{
+    position: absolute;
+    bottom: -40%;
+    left: 70%;
+    transform: translate(-70%, -70%);
+    margin: 1rem;
+    padding: 1rem 1.5rem;
+    border: none;
+    background-color: brown;
+    color: #000;
+    border-radius: 0.5rem;
+    text-decoration: none;
+}
+
+.signup-Button:hover{
+    border-radius: 4px;
+    text-decoration: underline;
+    color: #fff;
+}
+
+@media screen and (max-width: 850px) {
+    .formSignup{
+        top: 80%;
+    }
+    .signUp h1{
+        position: absolute;
+        top: 20%;
+        left: 30%;
+        transform: translate(20%, 30%);
+        font-size: 1rem;
+        margin-top: 3rem;
+    }
+    .signup-Button{
+        bottom: -45%;
+      left: 80%;
+    }
+}

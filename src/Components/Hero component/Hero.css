@@ -1,0 +1,113 @@
+/* STYLING THE HOME HERO SECTION */
+.homeHero{
+    display: flex;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.9;
+    background: linear-gradient(119deg, #ED4690 -2.11%, #52C 63.58%);
+    padding-top: 10rem;
+}
+.homeHero img{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.hero-text{
+    width: 100%;
+}
+
+.hero-text h1{
+    font-size: 3rem;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.hero-text h3{
+    font-size: 2rem;
+    font-style: italic;
+    padding: 0.5rem 0 2rem 0;
+    display: flex;
+    justify-content: baseline;
+}
+
+.hero-text button{
+    border-radius: 50px;
+    background: #F5167E;
+    box-shadow: 0px 10px 50px 0px rgba(61, 55, 241, 0.25);
+    border: none;
+    padding: 1rem 2rem;
+}
+
+.homebtn{
+    text-decoration: none;
+    color: #fff;
+}
+
+@media screen and (min-width: 280px) and (max-width: 850px) {
+
+    .homeHero{
+        width: 100%;
+        height: 100vh;
+        padding-top: 10rem;
+    }
+
+    .homeHero img{
+        width: 100%;
+        height: 100vh;
+        position: relative;
+    }
+
+    .hero-text{
+        /* width: 100%; */
+        object-fit: cover;
+        position: absolute;
+    }
+
+    .hero-text h1{
+        font-size: 1.8rem;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .homeHero h3{
+        font-size: 1rem;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-text button{
+        font-size: 1rem;
+        font-weight: bold;
+    }
+}
+
+/* STYLING THE SERVICE HERO SECTION */
+
+.DBHero{
+    width: 100%;
+    height: 70vh;
+}
+
+.DBHero img{
+    width: 100%;
+    height: 70vh;
+}
+
+/* STYLING THE SIGNUP HERO SECTION */
+
+.signUpHero{
+    background-image: url("../images/back.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 120vh;
+    margin-top: 5rem;
+}
+
+.signUpHero button{
+    display: none;
+}

@@ -1,0 +1,39 @@
+.display{
+    display: flex;
+    /* flex-wrap: wrap; */
+}
+
+.displayComp h1{
+    display: flex;
+    justify-content: center;
+}
+
+.displays{
+    display: flex;
+    gap: 2rem;
+}
+
+.events{
+    /* gap: 20rem; */
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    background-color: #f9f9f9;
+    /* width: 20%; */
+}
+
+
+.image{
+    width: 343.047px;
+    height: 197.11px;
+    flex-shrink: 0;
+    border-radius: 18.953px 18.953px 0px 0px;
+}
+
+
+@media screen and (min-width: 280px) and (max-width: 850px){
+    .display{
+        display: flex;
+        flex-direction: column;
+    }
+}
