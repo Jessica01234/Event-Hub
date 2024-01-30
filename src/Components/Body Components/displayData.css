@@ -35,6 +35,8 @@
     display: flex;
     background: #EEE1FF;
     letter-spacing: 1px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .CEImage{
