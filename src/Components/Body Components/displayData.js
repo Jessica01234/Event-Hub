@@ -1,6 +1,7 @@
 import React from 'react';
 import './displayData.css';
 import { Link } from 'react-router-dom';
+import CEImage from '../images/image 3.png';
 
 const DisplayData = () => {
   const storedDetails = localStorage.getItem('events');
@@ -8,9 +9,10 @@ const DisplayData = () => {
 
   return (
     <div className='displayComp'>
-      <h1>My Events</h1>
       {details && details.length > 0 ? (
+        
         <div className='display'>
+          <h1>My Events</h1>
           {details.map((event, index) => (
             <div key={index} className='events'>
               <img className='image' src={event.eImage} alt='' />
@@ -28,9 +30,20 @@ const DisplayData = () => {
           ))}
         </div>
       ) : (
-        <p>
-          <Link to={'/signUp'}>Get Started</Link>
-        </p>
+          <div className='Card CEDiv'>
+            <div className='Card'>
+              <img className='Card-Image CEImage' src={CEImage} alt=''/>
+            </div>
+            <div className='CEText'>
+              <h1 className=''>Create Your Event(s)</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, atque!</p>
+              <Link to={'/signUp'}>
+                <button className='btn'>Create Your Event</button>
+              </Link>
+             
+            </div>
+          </div>
+
       )}
     </div>
   );

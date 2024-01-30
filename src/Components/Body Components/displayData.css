@@ -1,3 +1,4 @@
+/* STYLING THE DISPLAYDATA COMPONENT */
 .display{
     display: flex;
     /* flex-wrap: wrap; */
@@ -24,16 +25,81 @@
 
 
 .image{
-    width: 343.047px;
-    height: 197.11px;
+    width: 30%;
+    height: 100vh;
     flex-shrink: 0;
     border-radius: 18.953px 18.953px 0px 0px;
 }
 
+.CEDiv{
+    display: flex;
+    background: #EEE1FF;
+    letter-spacing: 1px;
+}
 
+.CEImage{
+    width: 100%;
+    height: 50vh;
+}
+.CEText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.btn{
+    padding: 1rem 3rem;
+    border-radius:5rem;
+    background: rgba(61, 55, 241, 0.25);
+    box-shadow: 0px 10px 50px 0px rgba(61, 55, 241, 0.25);
+    width: 50%;
+    position: absolute;
+    bottom: 10%;
+    left: 20%;
+    transform: translate(8%,20%);
+    text-decoration: none;
+    color: #000;
+}
+
+.btn:hover{
+    cursor: pointer;
+    background: #5522CC;
+    color: #fff;
+    border-radius: 0.5rem;
+    font-size: large;
+    text-decoration: underline;
+}
 @media screen and (min-width: 280px) and (max-width: 850px){
     .display{
         display: flex;
         flex-direction: column;
+    }
+
+    .CEDiv{
+        height: 60vh;
+    }
+
+    .CEImage{
+        width: 120%;
+    }
+
+    .CEText h1{
+        font-size: 1.3rem;
+    }
+
+
+    .CEText p{
+        padding-left: 2rem;
+    }
+    .btn{
+        width: 70%;
+        font-size: 15px;
+        padding: 0.5rem 1rem;
+        left: 7%;
+    }
+
+    .btn:hover{
+        font-size: 0.9rem;
     }
 }
