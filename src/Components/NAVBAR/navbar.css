@@ -6,9 +6,19 @@
     width: 95%;
     position: fixed;
     z-index: 1000;
-    /* margin-top: -5rem; */
 }
 
+#CENav{
+    margin-top: -2rem;
+}
+
+#DBNav{
+    margin-top: -2rem;
+}
+
+#SUNav{
+    margin-top: -6.5rem;
+}
 .NavLogo{
     text-decoration: none;
    font-size: 3.5rem;

@@ -5,7 +5,7 @@ import CreateEventForm from "../Body Components/event";
 function About(){
     return(
       <>
-           <NavBar />
+           <NavBar cName="CENav"/>
             <CreateEventForm />
       </>
     )

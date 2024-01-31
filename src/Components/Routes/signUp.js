@@ -8,7 +8,7 @@ function SignUp(){
 
     return(
         <>
-        <NavBar />
+        <NavBar cName="SUNav"/>
             <Hero 
                 cName = "signUpHero" />        
                 <SignUpComponent/>

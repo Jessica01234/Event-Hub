@@ -7,7 +7,7 @@ import Footer from "../Footer Components/footer";
 function Service(){
     return(
         <>
-            <NavBar />
+            <NavBar cName="DBNav"/>
             <DisplayData />
             <Footer />
         </>

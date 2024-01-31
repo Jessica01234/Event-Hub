@@ -23,7 +23,7 @@ function CreateEventForm() {
     };
   
     console.log(userDetails);
-    localStorage.clear();
+    // localStorage.clear();
 
     // Retrieve existing events from localStorage
     const existingEvents = JSON.parse(localStorage.getItem('events')) || [];
@@ -35,7 +35,7 @@ function CreateEventForm() {
     localStorage.setItem('events', JSON.stringify(updatedEvents));
   
     // Navigate to the dashboard with the updated events as a query parameter
-    navigate(`/dashboard?events=${encodeURIComponent(JSON.stringify(updatedEvents))}`);
+    navigate(`/dashboard?events=${encodeURIComponent(updatedEvents)}`);
   };
   
   const handleImageChange = (e) => {

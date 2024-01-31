@@ -9,10 +9,10 @@ const DisplayData = () => {
 
   return (
     <div className='displayComp'>
+                <h1>UpComing Events</h1>
       {details && details.length > 0 ? (
         
         <div className='display'>
-          <h1>My Events</h1>
           {details.map((event, index) => (
             <div key={index} className='events'>
               <img className='image' src={event.eImage} alt='' />
