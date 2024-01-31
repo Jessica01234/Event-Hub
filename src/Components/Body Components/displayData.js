@@ -36,9 +36,9 @@ const DisplayData = () => {
             </div>
             <div className='CEText'>
               <h1 className=''>Create Your Event(s)</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, atque!</p>
+              <h3>You don't have any upcoming event(s)</h3>
               <Link to={'/signUp'}>
-                <button className='btn'>Create Your Event</button>
+                <button className='btn'>Create Now</button>
               </Link>
              
             </div>

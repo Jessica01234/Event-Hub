@@ -11,9 +11,23 @@ function CreateEventForm() {
 
   const navigate = useNavigate();
 
+
+  const updateEventsInLocalStorage = (newEvent) => {
+    // Retrieve existing events from localStorage
+    const existingEvents = JSON.parse(localStorage.getItem('events')) || [];
+  
+    // Append the new event to the existing events
+    const updatedEvents = [...existingEvents, newEvent];
+  
+    // Store the updated events in localStorage
+    // localStorage.setItem('events', JSON.stringify(updatedEvents));
+    localStorage.clear();
+    console.log(localStorage);
+  };
+  
   const handleSubmit = (event) => {
     event.preventDefault();
-    
+  
     const userDetails = {
       eName: eName,
       eImage: eImage,
@@ -23,20 +37,12 @@ function CreateEventForm() {
     };
   
     console.log(userDetails);
-    // localStorage.clear();
-
-    // Retrieve existing events from localStorage
-    const existingEvents = JSON.parse(localStorage.getItem('events')) || [];
-  
-    // Append the new event to the existing events
-    const updatedEvents = [...existingEvents, userDetails];
-  
-    // Store the updated events in localStorage
-    localStorage.setItem('events', JSON.stringify(updatedEvents));
+    updateEventsInLocalStorage(userDetails);
   
     // Navigate to the dashboard with the updated events as a query parameter
-    navigate(`/dashboard?events=${encodeURIComponent(updatedEvents)}`);
+    navigate(`/dashboard?events=${encodeURIComponent(localStorage.getItem('events'))}`);
   };
+  
   
   const handleImageChange = (e) => {
     const file = e.target.files[0];
