@@ -20,8 +20,8 @@ function CreateEventForm() {
     const updatedEvents = [...existingEvents, newEvent];
   
     // Store the updated events in localStorage
-    // localStorage.setItem('events', JSON.stringify(updatedEvents));
-    localStorage.clear();
+    localStorage.setItem('events', JSON.stringify(updatedEvents));
+    // localStorage.clear();
     console.log(localStorage);
   };
   
