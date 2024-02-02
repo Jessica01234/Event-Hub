@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './displayData.css';
 import { Link } from 'react-router-dom';
 import CEImage from '../images/image 3.png';
 import RegisterEventForm from './registerForm';
 const DisplayData = () => {
-  const [Counter, setCounter] = useState(0);
+  // const [Counter, setCounter] = useState(0);
 
-  const HandleIncreament = () =>{
-    setCounter(Counter+1);
-  }
+  // const HandleIncreament = () =>{
+  //   setCounter(Counter+1);
+  // }
   const storedDetails = localStorage.getItem('events');
   const details = JSON.parse(storedDetails);
 

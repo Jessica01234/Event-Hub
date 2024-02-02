@@ -6,8 +6,7 @@ function CreateEventForm() {
   const [eName, setEname] = useState('');
   const [eImage, setEimage] = useState('');
   const [eDay, setEday] = useState('');
-  const [ePreview, setEpreview] = useState('');
-  const [Register, setRegister] = useState(null); 
+  const [ePreview, setEpreview] = useState(''); 
 
   const navigate = useNavigate();
 
@@ -34,12 +33,7 @@ function CreateEventForm() {
       eDay: eDay,
       ePreview: ePreview,
     };
-      let Register =0;
 
-
-
-
-    setRegister(Register++);
     updateEventsInLocalStorage(userDetails);
   
     // Navigate to the dashboard with the updated events as a query parameter
