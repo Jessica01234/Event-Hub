@@ -5,9 +5,9 @@ import "./event.css";
 function CreateEventForm() {
   const [eName, setEname] = useState('');
   const [eImage, setEimage] = useState('');
-  const [eMonth, setEmonth] = useState('');
   const [eDay, setEday] = useState('');
   const [ePreview, setEpreview] = useState('');
+  const [Register, setRegister] = useState(null); 
 
   const navigate = useNavigate();
 
@@ -24,19 +24,22 @@ function CreateEventForm() {
     // localStorage.clear();
     console.log(localStorage);
   };
-  
+
   const handleSubmit = (event) => {
     event.preventDefault();
   
     const userDetails = {
       eName: eName,
       eImage: eImage,
-      eMonth: eMonth,
       eDay: eDay,
       ePreview: ePreview,
     };
-  
-    console.log(userDetails);
+      let Register =0;
+
+
+
+
+    setRegister(Register++);
     updateEventsInLocalStorage(userDetails);
   
     // Navigate to the dashboard with the updated events as a query parameter
@@ -66,6 +69,7 @@ function CreateEventForm() {
         <form onSubmit={handleSubmit} className="CEform">
         <label className="CELabel">Event Name</label>
           <input
+          required
             id="EnameInput"
             type="text"
             placeholder="Event Name"
@@ -74,20 +78,11 @@ function CreateEventForm() {
             }}
           />
 
-          <label className="CELabel">Event Month</label>
-          <input
-            id="EmonthInput"
-            type="text"
-            placeholder="MM"
-            onChange={(e) => {
-              setEmonth(e.target.value);
-            }}
-          />
-
           <label className="CELabel">Event Day</label>
           <input
+          required
             id="EdayInput"
-            type="text"
+            type="date"
             placeholder="DD"
             onChange={(e) => {
               setEday(e.target.value);
@@ -96,6 +91,7 @@ function CreateEventForm() {
 
           <label className="CELabel">Event Preview</label>
           <input
+          required
             id="EpreviewInput"
             type="text"
             placeholder="Event Preview"
@@ -106,11 +102,13 @@ function CreateEventForm() {
 
           <label className="CELabel">Image</label>
           <input
+          required
             id="EimageInput"
             type="file"
             accept="image/*"
             onChange={handleImageChange}
           />
+
           <button type="submit" className="CE-Button">
             Create
           </button>

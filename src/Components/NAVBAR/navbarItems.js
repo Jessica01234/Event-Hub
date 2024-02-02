@@ -1,5 +1,6 @@
 
 export const NavbarItems = [
+    
     {
         title: "Create Event",
         url: "/createEvent",
@@ -10,15 +11,15 @@ export const NavbarItems = [
         url: "/dashboard",
         cName: "NavLinks"
     },
-    {
-        title: "Sign Up",
-        url: "/signUp",
-        cName: "NavLinks",
-    },
     // {
-    //     title: "Log In",
-    //     url: "/logIn",
+    //     title: "Sign Up",
+    //     url: "/signUp",
     //     cName: "NavLinks",
     // },
+    {
+        title: "Register For Events",
+        url: "/register",
+        cName: "NavLinks",
+    },
 
 ]

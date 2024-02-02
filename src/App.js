@@ -3,7 +3,7 @@ import Home from './Components/Routes/Home'
 import CreateEvent from './Components/Routes/createEvent';
 import DashBoard from './Components/Routes/dashBoard';
 import SignUp from './Components/Routes/signUp';
-import LogInComponent from './Components/Body Components/logInComp';
+import Register from './Components/Routes/registerEvent';
 
 function App(){
     return(
@@ -14,7 +14,7 @@ function App(){
                     <Route path='/createEvent' element={<CreateEvent/>}/>
                     <Route path='/dashboard' element={<DashBoard/>}/>
                     <Route path='/signUp' element={<SignUp/>}/>
-                    <Route path='/logIn' element={<LogInComponent/>}/>
+                    <Route path='/register' element={<Register/>}/>
 
                 </Routes>
             </BrowserRouter>

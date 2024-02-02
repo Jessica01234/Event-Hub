@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './displayData.css';
 import { Link } from 'react-router-dom';
 import CEImage from '../images/image 3.png';
-
+import RegisterEventForm from './registerForm';
 const DisplayData = () => {
+  const [Counter, setCounter] = useState(0);
+
+  const HandleIncreament = () =>{
+    setCounter(Counter+1);
+  }
   const storedDetails = localStorage.getItem('events');
   const details = JSON.parse(storedDetails);
 
   return (
     <div className='displayComp'>
-                <h1>UpComing Events</h1>
+        <h1>UpComing Events</h1>
       {details && details.length > 0 ? (
         
         <div className='display'>
@@ -18,14 +23,18 @@ const DisplayData = () => {
               <img className='image' src={event.eImage} alt='' />
               <div className='displays'>
                 <div>
-                  <h4>{event.eMonth}</h4>
                   <h1 style={{ marginTop: '-1rem' }}>{event.eDay}</h1>
                 </div>
                 <div>
                   <h3>{event.eName}</h3>
                   <h4>{event.ePreview}</h4>
                 </div>
+                {/* <nav>
+                  <p>{Counter}</p>
+                  <button onClick={HandleIncreament}>Register</button>
+                </nav> */}
               </div>
+              <RegisterEventForm />
             </div>
           ))}
         </div>

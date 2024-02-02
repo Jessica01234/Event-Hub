@@ -57,7 +57,7 @@ class NavBar extends React.Component {
                 </li>
               );
             })}
-            {user ? <li className='NavLinks'>{user.fname}</li>: <li><Link to={'/logIn'} className='NavLinks'>LogIn</Link></li>}
+            {user ? <li className='NavLinks'>{user.fname}</li>: <li><Link to={'/signUp'} className='NavLinks'>SignUp</Link></li>}
           </ul>
         </div>
       </>
