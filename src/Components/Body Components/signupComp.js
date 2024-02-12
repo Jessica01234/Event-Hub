@@ -22,24 +22,28 @@ function SignUpComponent(){
     return(
         <>
           <div className = "signUp">
-            <h1>CREATE AN ACCOUNT</h1>
+            
             <form className="formSignup">
-                <label className="signupLabel">Surname</label>
-                <input id="SnameInput" type="name" placeholder="Sylvester" onChange={(e) => setusersDetails({...usersDetails, Sname: e.target.value})}/>
+            <h1>Sign UP</h1>
+                <label>Surname</label>
+                <input id="SnameInput" type="name" required placeholder="Sylvester" onChange={(e) => setusersDetails({...usersDetails, Sname: e.target.value})}/>
 
-                <label className="signupLabel">First Name</label>
-                <input id="FnameInput" type="name" placeholder="Jessica" onChange={(e) => setusersDetails({...usersDetails, fname: e.target.value})}/>
+                <label>First Name</label>
+                <input id="FnameInput" type="name" required placeholder="Jessica" onChange={(e) => setusersDetails({...usersDetails, fname: e.target.value})}/>
 
-                <label className="signupLabel">Email</label>
+                <label>Email</label>
                 <input id="emailInput"required type="email" placeholder="example@gmail.com" onChange={(e) => setusersDetails({...usersDetails, email: e.target.value})}/>
 
-                <label className="signupLabel">Password</label>
-                <input id="passwordInput" type="password" placeholder="must not be less than 8 character" onChange={(e) => setusersDetails({...usersDetails, password: e.target.value})}/>
-            </form>
-            <button onClick={HandleClicked}>
-              <Link to={"/"} className="signup-Button">SignUp</Link>
-            </button>
+                <label>Password</label>
+                <input id="passwordInput" type="password" required placeholder="must not be less than 8 character" onChange={(e) => setusersDetails({...usersDetails, password: e.target.value})}/>
+               
+                <Link to={"/createEvent"}>
+                   <button  className="signup-Button" onClick={HandleClicked}>SignUp</button>
+                </Link>
+                <p className="logInLink">Already have an acount<Link to={'/logIn'}>LogIn here</Link></p>
+              </form>
           </div>
+          
         </>
     )
 }

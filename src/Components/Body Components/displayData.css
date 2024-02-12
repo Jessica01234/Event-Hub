@@ -7,16 +7,19 @@
 .displayComp h1{
     display: flex;
     justify-content: center;
-    padding-top: 3rem;
+    padding-top: 5rem;
 }
 
 .displays{
     display: flex;
-    gap: 2rem;
+    justify-content: space-around;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 .events{
     border: 1px solid #ccc;
+    border-radius: 6px;
     padding: 10px;
     margin: 10px;
     background-color: #f9f9f9;
@@ -80,10 +83,10 @@
     .CEImage{
         width: 120%;
     }
-
+/* 
     .CEText{
         position: relative;
-    }
+    } */
     .CEText h1{
         font-size: 1.3rem;
     }

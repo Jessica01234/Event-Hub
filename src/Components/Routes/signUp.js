@@ -9,8 +9,8 @@ function SignUp(){
     return(
         <>
         <NavBar cName="SUNav"/>
-            <Hero 
-                cName = "signUpHero" />        
+            {/* <Hero 
+                cName = "signUpHero" />         */}
                 <SignUpComponent/>
                 <Footer />
         </>

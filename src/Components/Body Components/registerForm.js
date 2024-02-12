@@ -1,57 +1,77 @@
 import React, { useState, useEffect } from "react";
+import './registerForm.css';
 
-function RegisterEventForm() {
-  const [eventNames, setEventNames] = useState([]);
-  const [Counter, setCounter] = useState(0);
-  useEffect(() => {
-
-    const events = localStorage.getItem('events');
-    const eventsparse = JSON.parse(events);
-    let newArr = [];
-    eventsparse.map((event)=>{
-        newArr.push(event.eName)
-    })
-    console.log(newArr);
-    setEventNames(newArr);
-  }, []);
-  const HandleIncreament = () =>{
-    setCounter(Counter+1);
-  }
-
+function RegisterEventForm({ eventName, onRegistration, counter }) {
   const handleRegistration = () => {
-    // Ensure that the user has selected an event to register for
-    if (!eventNames) {
-      alert("Please select an event to register for.");
-      return;
-    }else{
-        alert("Registration successful");
-    }
-  HandleIncreament(Counter);
-    // Assuming you want to store the registration data in localStorage
+    onRegistration(eventName);
+  };
+
+  return (
+   <div className="registerComp">
+     <div className="register">
+      <h1>{eventName}</h1>
+      <p>{counter} person(s) registered for this event</p>
+      <button className="reg-btn" onClick={handleRegistration}>Register</button>
+    </div>
+   </div>
+  );
+}
+
+function DisplayRegisterForms() {
+  const [eventNames, setEventNames] = useState([]);
+  const [counters, setCounters] = useState([]);
+
+  useEffect(() => {
+    const events = localStorage.getItem('events');
+    const eventsparse = JSON.parse(events) || [];
+    let newArr = [];
+    eventsparse.forEach((event) => {
+      newArr.push(event.eName);
+    });
+    setEventNames(newArr);
+
+    // Initialize counters array with values from local storage or zeros
+    const storedCounters = JSON.parse(localStorage.getItem('counters')) || Array(newArr.length).fill(0);
+    setCounters(storedCounters);
+  }, []);
+
+  const handleRegistration = (eventName) => {
+    alert(`Registration successful for ${eventName}`);
+
+    // Find the index of the event in eventNames array
+    const eventIndex = eventNames.indexOf(eventName);
+
+    // Create a copy of the counters array and update the counter at the specified index
+    const newCounters = [...counters];
+    newCounters[eventIndex] += 1;
+    setCounters(newCounters);
+
+    // Save the updated counters array to local storage
+    localStorage.setItem('counters', JSON.stringify(newCounters));
+
     const previousRegistrationsString = localStorage.getItem('eventNames');
     const previousRegistrations = JSON.parse(previousRegistrationsString) || [];
-    // Add the new registration to the array
-    const updatedRegistrations = [...previousRegistrations, eventNames];
-    // Save the updated registrations back to localStorage
+    const updatedRegistrations = [...previousRegistrations, eventName];
     localStorage.setItem('eventNames', JSON.stringify(updatedRegistrations));
     console.log(localStorage.eventNames);
   };
-  
 
   return (
     <div>
-      <div>
-        <label className="CELabel">Register</label>
-        <select>
-          {eventNames.map((eventName, index) => (
-            <option key={index}>{eventName}</option>
-          ))}
-        </select>
-        <p>{Counter}</p>
-        <button onClick={handleRegistration}>Register</button>
-      </div>
+      {eventNames.length > 0 ? (
+        eventNames.map((eventName, index) => (
+          <RegisterEventForm
+            key={index}
+            eventName={eventName}
+            onRegistration={handleRegistration}
+            counter={counters[index]}
+          />
+        ))
+      ) : (
+        <p>No events available. Please create events first.</p>
+      )}
     </div>
   );
 }
 
-export default RegisterEventForm;
+export default DisplayRegisterForms;

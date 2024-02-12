@@ -1,11 +1,17 @@
-        /* NAVBAR STYLING */
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}        /* NAVBAR STYLING */
 .NavbarItems{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 95%;
+    width: 100%;
     position: fixed;
     z-index: 1000;
+    /* background-color: #fff; */
+    border-radius: 10px;
 }
 
 #CENav{
@@ -17,12 +23,17 @@
 }
 
 #SUNav{
-    margin-top: -6.5rem;
+    margin-top: -2rem;
+}
+
+#RENav{
+    margin-top: -2rem;
 }
 .NavLogo{
     text-decoration: none;
    font-size: 3.5rem;
    cursor: pointer;
+   color: #000;
 }
 
 .NavbarMenu{
@@ -45,15 +56,19 @@
     font-size: 20px;
     font-style: normal;
     line-height: normal;
-    color: black;
+    color: #000;
+}
+
+.NavLinks:hover{
+  border-bottom: 5px solid #d82626;
 }
 
 .menuBar{
-    height: 60px;
+    height: 50px;
 }
 
 .menuTimes{
-    height: 60px;
+    height: 50px;
 }
 
 

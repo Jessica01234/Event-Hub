@@ -88,7 +88,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./logInComp.css";
-import ExpandArrow from '../images/Expand Arrow.png';
+// import ExpandArrow from '../images/Expand Arrow.png';
 
 function LogInComponent() {
   const [email, setEmail] = useState("");
@@ -140,15 +140,15 @@ function LogInComponent() {
           </>
         ) : (
           <>
-            <div>
+            {/* <div className="homeBtn">
              <button>Home
               <Link to={'/'}>
                   <img src={ExpandArrow} alt=""/>
                 </Link>
              </button>
-            </div>
-            <h1>LOG IN</h1>
+            </div> */}
             <form onSubmit={handleLogin} className="logInForm">
+              <h1>LOG IN</h1>
               <label className="logInLabel">Email</label>
               <input
                 id="emailInput"
@@ -169,7 +169,7 @@ function LogInComponent() {
               />
 
               <button type="submit" className="LogIn-Button">
-                Log In
+                <Link to={'/'}>Log In</Link>
               </button>
             </form>
           </>
