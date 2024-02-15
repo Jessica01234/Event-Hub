@@ -33,7 +33,7 @@ body{
     text-decoration: none;
    font-size: 3.5rem;
    cursor: pointer;
-   color: #000;
+   color: #fff;
 }
 
 .NavbarMenu{
@@ -56,11 +56,7 @@ body{
     font-size: 20px;
     font-style: normal;
     line-height: normal;
-    color: #000;
-}
-
-.NavLinks:hover{
-  border-bottom: 5px solid #d82626;
+    color: #fff;
 }
 
 .menuBar{

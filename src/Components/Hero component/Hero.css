@@ -24,8 +24,8 @@
     font-style: italic;
 }
 
-.hero-text h3{
-    font-size: 2rem;
+.hero-text h4{
+    font-size: 1.2rem;
     font-style: italic;
     padding: 0.5rem 0 2rem 0;
     display: flex;
@@ -35,15 +35,17 @@
 .hero-text button{
     border-radius: 50px;
     background: #F5167E;
-    box-shadow: 0px 10px 50px 0px rgba(61, 55, 241, 0.25);
     border: none;
     padding: 1rem 2rem;
+    font-size: large;
 }
 
-.homebtn{
+.hero-text button a{
     text-decoration: none;
     color: #fff;
 }
+
+
 
 @media screen and (min-width: 280px) and (max-width: 850px) {
 

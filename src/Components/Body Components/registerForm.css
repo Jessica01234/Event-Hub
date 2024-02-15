@@ -1,13 +1,18 @@
-.registerComp{
+.father{
     padding-top: 5rem;
+    background: linear-gradient(119deg, #4D2BB5 -2.11%, #4DD6F3 63.58%);
 }
 
-.register{
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px;
-    background-color: #f9f9f9;
-    letter-spacing: 2px;
+.mother{
+    display: flex;
+    justify-content: center;
+    /* flex-direction: column; */
+    /* border: 1px solid #ccc; */
+    /* padding: 10px; */
+    /* margin: 10px; */
+    background: linear-gradient(119deg, #521753 -2.11%, #251545 63.58%);
+    width: 50%;
+    /* letter-spacing: 2px; */
 }
 
 .reg-btn{

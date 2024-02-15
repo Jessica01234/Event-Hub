@@ -1,26 +1,27 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./event.css";
+import "./createEventForm.css";
 
 function CreateEventForm() {
   const [eName, setEname] = useState('');
   const [eImage, setEimage] = useState('');
   const [eDay, setEday] = useState('');
   const [ePreview, setEpreview] = useState(''); 
+  const [eLocation, setElocation] = useState(''); 
 
   const navigate = useNavigate();
 
 
   const updateEventsInLocalStorage = (newEvent) => {
     // Retrieve existing events from localStorage
-    const existingEvents = JSON.parse(localStorage.getItem('events')) || [];
+    const existingEvents = JSON.parse(localStorage.getItem('InPersonEvents')) || [];
   
     // Append the new event to the existing events
     const updatedEvents = [...existingEvents, newEvent];
   
     // Store the updated events in localStorage
-    localStorage.setItem('events', JSON.stringify(updatedEvents));
-    localStorage.clear();
+    localStorage.setItem('InPersonEvents', JSON.stringify(updatedEvents));
+    // localStorage.clear();
     console.log(localStorage);
   };
 
@@ -32,12 +33,13 @@ function CreateEventForm() {
       eImage: eImage,
       eDay: eDay,
       ePreview: ePreview,
+      eLocation: eLocation
     };
 
     updateEventsInLocalStorage(userDetails);
   
     // Navigate to the dashboard with the updated events as a query parameter
-    navigate(`/dashboard?events=${encodeURIComponent(localStorage.getItem('events'))}`);
+    navigate(`/dashboard`);
   };
   
   
@@ -59,8 +61,8 @@ function CreateEventForm() {
   return (
     <>
       <div className="CE">
-        <h1>CREATE YOUR EVENT</h1>
         <form onSubmit={handleSubmit} className="CEform">
+        <h1>CREATE YOUR EVENT</h1>
         <label className="CELabel">Event Name</label>
           <input
           required
@@ -94,7 +96,18 @@ function CreateEventForm() {
             }}
           />
 
-          <label className="CELabel">Image</label>
+          <label className="CELabel">Event Location</label>
+          <input
+          required
+            id="ElocationInput"
+            type="text"
+            placeholder="Event Location"
+            onChange={(e) => {
+              setElocation(e.target.value);
+            }}
+          />
+
+          <label className="CELabel">Event Image</label>
           <input
           required
             id="EimageInput"
@@ -102,10 +115,7 @@ function CreateEventForm() {
             accept="image/*"
             onChange={handleImageChange}
           />
-
-          <button type="submit" className="CE-Button">
-            Create
-          </button>
+            <button type="submit" className="CE-Button">Submit</button>
         </form>
       </div>
     </>

@@ -1,6 +1,5 @@
 import React from "react";
 import NavBar from "../NAVBAR/navbar";
-import Hero from "../Hero component/Hero";
 import SignUpComponent from "../Body Components/signupComp";
 import Footer from "../Footer Components/footer";
 
@@ -9,10 +8,8 @@ function SignUp(){
     return(
         <>
         <NavBar cName="SUNav"/>
-            {/* <Hero 
-                cName = "signUpHero" />         */}
-                <SignUpComponent/>
-                <Footer />
+        <SignUpComponent/>
+        <Footer />
         </>
         )
 }

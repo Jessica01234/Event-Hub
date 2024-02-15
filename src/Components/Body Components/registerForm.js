@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './registerForm.css';
+import REGISTER from '../images/Rectangle 14.png';
 
 function RegisterEventForm({ eventName, onRegistration, counter }) {
   const handleRegistration = () => {
@@ -68,7 +69,13 @@ function DisplayRegisterForms() {
           />
         ))
       ) : (
-        <p>No events available. Please create events first.</p>
+        <div className="father">
+          <nav className="mother">
+            <h1 className="child1">you Have no events</h1>
+            <button className="child2">Create Now</button>
+            <img className="child3" src={REGISTER} alt=""/>
+          </nav>
+        </div>
       )}
     </div>
   );

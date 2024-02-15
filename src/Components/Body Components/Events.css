@@ -1,0 +1,206 @@
+.Ancestor{
+    background: #000;
+    color: #fff;
+    width: 100%;
+    height: 110vh;
+    padding-top: 5rem;
+}
+
+.Ancestor h1{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 3rem;
+}
+
+.Father{
+    display: flex;
+    justify-content: space-evenly;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.Mother1{
+    width: 30%;
+    height:80vh;
+    background: linear-gradient(119deg, #521753 -2.11%, #251545 63.58%);
+    border-radius: 15px;
+}
+
+.Mother2{
+    width: 30%;
+    height: 80vh;
+    background: linear-gradient(119deg, #4D2BB5 -2.11%, #4DD6F3 63.58%);
+    border-radius: 15px;
+}
+
+.Mother3{
+    width: 30%;
+    height: 80vh;
+    background: linear-gradient(119deg, #C1C2E6 -2.11%, #F0BDD2 63.58%);
+    border-radius: 15px;
+    color: #000;
+}
+
+.Father h1{
+    font-size: xx-large;
+}
+
+.Father p{
+    font-size: x-large;
+}
+
+.Father button{
+    border: none;
+    font-size: larger;
+    border-radius: 30px;
+    padding: 1rem 2rem;
+    margin-left: 25%;
+    margin-bottom: 3rem;
+}
+
+.Father button a{
+    text-decoration: none;
+    color:  #000;
+}
+video{
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    /* height: 100%; */
+    object-fit: cover;
+    border-radius: 6px;
+    margin-left: 20%;
+}
+
+
+/* STYLING THE INPERSON COMPONENT */
+
+
+.InpersonAncestor{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.InPersonFather{
+    padding: 5rem 1rem;
+    font-family: sans-serif;
+}
+
+.InPersonMother{
+    padding: 5rem 1rem;
+}
+.InPersonMother img{
+    /* width: 50%; */
+    height: 50vh;
+    object-fit: cover;
+}
+
+.InPersonFather h1{
+    font-size: 2rem;
+}
+
+.InPersonFather p{
+    font-size: larger;
+}
+
+.InPersonFather button{
+    margin: 1rem 10rem;
+    border: none;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 1rem 0.5rem;
+}
+
+.InPersonFather button a{
+    text-decoration: none;
+    font-size: large;
+    color: #000;
+}
+
+/* STYLING THE VIRTUAL COMPONENET */
+
+
+.VirtualAncestor{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.VirtualFather{
+    padding: 5rem 1rem;
+    font-family: sans-serif;
+}
+
+.VirtualMother{
+    padding: 5rem 1rem;
+}
+
+.VirtualMother img{
+    height: 50vh;
+    object-fit: cover;
+}
+
+.VirtualFather h1{
+    font-size: 2rem;
+}
+
+.VirtualFather p{
+    font-size: larger;
+}
+
+.VirtualFather button{
+    margin: 1rem 10rem;
+    border: none;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 1rem 0.5rem;
+}
+
+.VirtualFather button a{
+    text-decoration: none;
+    font-size: large;
+    color: #000;
+}
+
+/* STYLING THE HYBRID COMPONENET */
+
+.HybridAncestor{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.HybridFather{
+    padding: 5rem 1rem;
+    font-family: sans-serif;
+}
+
+.HybridMother{
+    padding: 5rem 1rem;
+}
+
+.HybridMother img{
+    height: 50vh;
+    object-fit: cover;
+}
+
+.HybridFather h1{
+    font-size: 2rem;
+}
+
+.HybridFather p{
+    font-size: larger;
+    padding: 0 15rem 0rem 0;
+}
+
+.HybridFather button{
+    margin: 1rem 10rem;
+    border: none;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 1rem 0.5rem;
+}
+
+.HybridFather button a{
+    text-decoration: none;
+    font-size: large;
+    color: #000;
+}

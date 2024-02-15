@@ -1,13 +1,13 @@
 import React from "react";
 import NavBar from "../NAVBAR/navbar";
-import CreateEventForm from "../Body Components/event";
+import Events from "../Body Components/Events";
 
-function About(){
+function CreateEvent(){
     return(
       <>
            <NavBar cName="CENav"/>
-            <CreateEventForm />
+           <Events />
       </>
     )
 }
-export default About;
+export default CreateEvent;
