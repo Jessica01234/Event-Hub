@@ -1,22 +1,36 @@
 .Ancestor{
+    /* display: flex; */
+    flex-wrap: wrap;
     background: #000;
     color: #fff;
     width: 100%;
-    height: 110vh;
-    padding-top: 5rem;
+    height: auto;
+    margin-top: 2rem;
 }
 
-.Ancestor h1{
+.h1{
     display: flex;
     justify-content: center;
-    padding: 1rem;
+    padding-top: 4rem;
     font-size: 3rem;
+    color: #fff;
 }
 
 .Father{
     display: flex;
-    justify-content: space-evenly;
+    /* flex-wrap: wrap; */
+    justify-content: space-around;
     font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: auto;
+}
+
+.Mother1,
+.Mother2,
+.Mother3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .Mother1{
@@ -42,6 +56,8 @@
 }
 
 .Father h1{
+    display: flex;
+    justify-content: center;
     font-size: xx-large;
 }
 
@@ -54,7 +70,6 @@
     font-size: larger;
     border-radius: 30px;
     padding: 1rem 2rem;
-    margin-left: 25%;
     margin-bottom: 3rem;
 }
 
@@ -62,12 +77,11 @@
     text-decoration: none;
     color:  #000;
 }
-video{
+.eventVideo{
     display: flex;
     justify-content: center;
     width: 60%;
-    /* height: 100%; */
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 6px;
     margin-left: 20%;
 }
@@ -79,6 +93,7 @@ video{
 .InpersonAncestor{
     display: flex;
     justify-content: space-evenly;
+    padding-top: 2rem;
 }
 
 .InPersonFather{
@@ -123,6 +138,7 @@ video{
 .VirtualAncestor{
     display: flex;
     justify-content: space-evenly;
+    padding-top: 2rem;
 }
 
 .VirtualFather{
@@ -166,6 +182,7 @@ video{
 .HybridAncestor{
     display: flex;
     justify-content: space-evenly;
+    padding-top: 2rem;
 }
 
 .HybridFather{
@@ -203,4 +220,52 @@ video{
     text-decoration: none;
     font-size: large;
     color: #000;
+}
+
+@media screen and (min-width: 280px) and (max-width: 850px){
+    .h1{
+        font-size: 1.5rem;
+    }
+    .Father h1{
+        font-size: 1.3em;
+    }
+    .Father p{
+        font-size: large;
+    }
+
+    .Father {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .Mother1,
+    .Mother2,
+    .Mother3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: calc(100% - 6em);
+        height: 90vh;
+        margin: 2em;
+        box-sizing: border-box;
+    }
+    
+    .Father button{
+        font-size: 15px;
+        padding: 0.5rem 1rem;
+    }
+    .eventVideo{
+        width: 60%;
+        /* height: 50vh; */
+        object-fit: contain;
+    } 
+}
+
+@media screen and (min-width: 851px) and (max-width: 1400px){
+    .Mother1,
+    .Mother2,
+    .Mother3{
+        height: auto;
+    }
 }

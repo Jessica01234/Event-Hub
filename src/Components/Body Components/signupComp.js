@@ -40,7 +40,7 @@ function SignUpComponent(){
                 <Link to={"/createEvent"}>
                    <button  className="signup-Button" onClick={HandleClicked}>SignUp</button>
                 </Link>
-                <p className="logInLink">Already have an acount<Link to={'/logIn'}>LogIn here</Link></p>
+                <p className="logInLink">Already have an acount<Link className="loginLink" to={'/logIn'}>LogIn here</Link></p>
               </form>
           </div>
           

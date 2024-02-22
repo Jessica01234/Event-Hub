@@ -2,49 +2,49 @@ import React from 'react';
 import './displayData.css';
 import { WhatsappShareButton, TelegramShareButton, FacebookShareButton } from 'react-share';
 
-const VirtualDisplay = () => {
-  const VirtualEventsString = localStorage.getItem('VirtualEvents');
-  const VirtualEvents = JSON.parse(VirtualEventsString);
+const HybridDisplay = () => {
+  const HybridEventString = localStorage.getItem('HybridEvents');
+  const HybridEvents = JSON.parse(HybridEventString);
 
   return (
     <div className='displayComp'>
-      <h1>Virtual Events</h1>
-      
-        {VirtualEvents ? (
-          <>
-              <h1 className='H1'>Virtual Events</h1>
-              <div className='display'>
-              {VirtualEvents.map((event, index) => (
-                <div key={index} className='events'>
-                  <img className='image' src={event.eImage} alt='' />
-                  <section className='displays'>
-                    <div>
-                      <h3>{event.eDay}</h3>
-                      <h3>{event.eLocation}</h3>
-                    </div>
-                    <div>
-                      <h2>{event.eName}</h2>
-                      <h4>{event.ePreview}</h4>
-                    </div>
-                  </section>
-
-                  {/* Rendering share buttons for each event */}
-                  {renderShareButtons(event)}
+        {HybridEvents ? (
+           <>
+           <h1 className='H1'>Hybrid Events</h1>
+            <div className='display'>
+            {HybridEvents.map((event, index) => (
+            <div key={index} className='events'>
+              <img className='image' src={event.eImage} alt='' />
+              <section className='displays'>
+                <div>
+                  <h3>{event.eDay}</h3>
+                  <h3>Virtual Location: {event.VirtualLocation}</h3>
+                  <h3>Inperson Location: {event.InPersonLocation}</h3>
                 </div>
-              ))}
-              </div>
-          </>
+                <div>
+                  <h2>{event.eName}</h2>
+                  <h4>{event.ePreview}</h4>
+                </div>
+              </section>
+
+              {/* Rendering share buttons for each event */}
+              {renderShareButtons(event)}
+            </div>
+          ))}
+            </div>
+           </>
         ) : (
-          <p>No virtual events available.</p>
+          <p>No hybrid events available.</p>
         )}
       
     </div>
   );
 
+  // Define the function inside the component to access the event values
   function renderShareButtons(event) {
     const location = event.eLocation;
     const decodedLink = decodeURIComponent('https://event-mgt.vercel.app');
-    const shareMessage = `Check out this virtual event: ${event.eName} at ${event.eLocation}. Preview: ${event.ePreview}. Link: ${decodedLink}`;
+    const shareMessage = `Check out this hybrid event: ${event.eName} at ${event.VirtualLocation} (Virtual) or ${event.InPersonLocation} (In-person). Preview: ${event.ePreview}. Link: ${decodedLink}`;
 
     if (location === 'WhatsApp') {
       return (
@@ -81,4 +81,4 @@ const VirtualDisplay = () => {
   }
 };
 
-export default VirtualDisplay;
+export default HybridDisplay;

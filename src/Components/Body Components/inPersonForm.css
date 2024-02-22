@@ -7,6 +7,11 @@
     background: linear-gradient(119deg, #A7D7C5 -2.11%, #C1E3D6 63.58%);
 }
 
+.hybridCE{
+    height: 150vh;
+}
+
+
 .CE h1{
     display: flex;
     justify-content: center;
@@ -23,6 +28,10 @@
     background-color: #fff;
     padding: 2rem;
     border-radius: 6px;
+}
+
+.hybridForm{
+    height: 135vh;
 }
 
 .CE label{

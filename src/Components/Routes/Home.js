@@ -1,7 +1,8 @@
 import React from "react";
 import NavBar from "../NAVBAR/navbar";
 import Hero from "../Hero component/Hero";
-import HomeImg from "../images/home.png"
+// import HomeImg from "../images/home.png";
+import HomeVideo from '../Assets/banner-intro.webm';
 // import DisplayData from "../Body Components/displayData";
 import Events from "../Body Components/Events";
 import Footer from "../Footer Components/footer";
@@ -13,7 +14,7 @@ function Home(){
             <NavBar />
             <Hero 
                 cName = "homeHero animate__animated animate__fadeIn"
-                heroImg = {HomeImg}
+                heroImg = {HomeVideo}
                 text1 = "ALL-IN-ONE EVENT MANAGEMENT SOFTWARE"
                 text2 = "Start Planning Today!"
                 btn = "SIGN UP FOR FREE"

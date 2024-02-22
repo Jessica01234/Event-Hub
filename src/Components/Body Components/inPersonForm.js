@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./inPersonForm.css";
 
-function VirtualForm() {
+function InPersonForm() {
   const [eName, setEname] = useState('');
   const [eImage, setEimage] = useState('');
   const [eDay, setEday] = useState('');
@@ -14,13 +14,13 @@ function VirtualForm() {
 
   const updateEventsInLocalStorage = (newEvent) => {
     // Retrieve existing events from localStorage
-    const existingEvents = JSON.parse(localStorage.getItem('VirtualEvents')) || [];
+    const existingEvents = JSON.parse(localStorage.getItem('InPersonEvents')) || [];
   
     // Append the new event to the existing events
     const updatedEvents = [...existingEvents, newEvent];
   
     // Store the updated events in localStorage
-    localStorage.setItem('VirtualEvents', JSON.stringify(updatedEvents));
+    localStorage.setItem('InPersonEvents', JSON.stringify(updatedEvents));
     // localStorage.clear();
     console.log(localStorage);
   };
@@ -96,15 +96,16 @@ function VirtualForm() {
             }}
           />
 
-            <label htmlFor="location">Location</label>
-            <select id="location" required onChange={(e) => {
-                    setElocation(e.target.value);
-                    }}>
-                <option value="">Select</option>
-                <option>WhatsApp</option>
-                <option>Telegram</option>
-                <option>Facebook</option>
-            </select>
+          <label className="CELabel">Event Location</label>
+          <input
+          required
+            id="ElocationInput"
+            type="text"
+            placeholder="Event Location"
+            onChange={(e) => {
+              setElocation(e.target.value);
+            }}
+          />
 
           <label className="CELabel">Event Image</label>
           <input
@@ -121,4 +122,4 @@ function VirtualForm() {
   );
 }
 
-export default VirtualForm;
+export default InPersonForm;

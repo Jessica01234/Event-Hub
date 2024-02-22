@@ -1,27 +1,160 @@
+.MainAncestor{
+    background: linear-gradient(119deg, #000 -2.11%, #000 63.58%);
+    height: auto;
+}
+
+.ancestor{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5pc;
+    /* width: 100%; */
+    /* justify-content: space-between; */
+}
+
+.aside{
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+    background: #fff;
+    height: 60vh;
+    padding: 15px;
+    line-height: 5em;
+    border-radius: 0 20px 20px 0;
+    /* border-radius: 2em; */
+}
+
+aside a{
+    font-size: 1.5rem;
+    color: #000;
+}
+
+.reg{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 70%;
+    /* background-color: #fff; */
+}
+
+.registerComp{
+    width: 40%;
+}
+
+.register{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 20px;
+    height: 50vh;
+    font-family: sans-serif;
+}
+
+.register h1{
+    font-size: 2em;
+}
+
+.register label{
+    font-size: larger;
+    margin-bottom: 1pc;
+}
+
+.register input{
+    width: 50%;
+    height: 5vh;
+    border-radius: 6px;
+    border: none;
+    padding-left: 5em;
+    border: 2px solid #000;
+}
+
+.register p{
+    font-style: italic;
+    font-weight: 600;
+}
+
+.reg-btn{
+    border-radius: 50px;
+    background: #F5167E;
+    border: none;
+    font-size: large;
+    font-weight: bold;
+    padding: 1rem 3rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.GrandFatherh1{
+    padding-top: 3em;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+}
 .father{
-    padding-top: 5rem;
-    background: linear-gradient(119deg, #4D2BB5 -2.11%, #4DD6F3 63.58%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 2em 0;
 }
 
 .mother{
     display: flex;
-    justify-content: center;
-    /* flex-direction: column; */
-    /* border: 1px solid #ccc; */
-    /* padding: 10px; */
-    /* margin: 10px; */
-    background: linear-gradient(119deg, #521753 -2.11%, #251545 63.58%);
-    width: 50%;
-    /* letter-spacing: 2px; */
+    flex-direction: column;
+    align-items: center;
+    line-height: 5rem;
+}
+.child1{
+    height: 70vh;
+    width: auto;
 }
 
-.reg-btn{
-    padding: 1rem 3rem;
+.child2{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+}
+.child3{
+    font-size: 20px;
+}
+.child4{
+    padding: 1rem;
     border-radius:5rem;
-    background: rgba(61, 55, 241, 0.25);
-    box-shadow: 0px 10px 50px 0px rgba(61, 55, 241, 0.25);
-    margin-left: 5rem;
+    border: none;
+    border:1px solid #ccc;
+    background-color: #ccc;
+    font-size: 20px;
+}
+
+.child2,
+.child3,
+.child4{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 900;
+}
+.child4 a{
     text-decoration: none;
     color: #000;
-    cursor: pointer;
+}
+@media screen and (min-width: 280px) and (max-width: 850px){
+    .father{
+        width: 100%;
+    }
+
+    .child1{
+        width: 100%;
+        height: 80vh;
+    }
+    .child2{
+        display: flex;
+        justify-content: center;
+    }
+    .child4{
+        margin-left: 0;
+    }
+    .mother{
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
 }

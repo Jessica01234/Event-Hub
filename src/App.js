@@ -8,7 +8,12 @@ import LogInComponent from './Components/Body Components/logInComp';
 import InPerson from './Components/Body Components/InPerson';
 import Virtual from './Components/Body Components/Virtual';
 import Hybrid from './Components/Body Components/Hybrid';
-import CreateEventForm from './Components/Body Components/createEventForm';
+import InPersonForm from './Components/Body Components/inPersonForm';
+import VirtualForm from './Components/Body Components/virtualForm';
+import HybridForm from './Components/Body Components/hybridForm';
+import InPersonRegisterForms from './Components/Body Components/registerForm';
+import VirtualRegisterForms from './Components/Body Components/VirtaulRegister';
+import HybridRegisterForms from './Components/Body Components/HybridRegister';
 
 function App(){
     return(
@@ -24,7 +29,12 @@ function App(){
                     <Route path='/inPerson' element={<InPerson/>}/>
                     <Route path='/virtual' element={<Virtual/>}/>
                     <Route path='/hybrid' element={<Hybrid/>}/>
-                    <Route path='/inPersonForm' element={<CreateEventForm/>}/>
+                    <Route path='/inPersonForm' element={<InPersonForm/>}/>
+                    <Route path='/virtualForm' element={<VirtualForm/>}/>
+                    <Route path='/hybridForm' element={<HybridForm/>}/>
+                    <Route path='/register' element={<InPersonRegisterForms/>}/>
+                    <Route path='/virtualRegister' element={<VirtualRegisterForms/>}/>
+                    <Route path='/hybridRegister' element={<HybridRegisterForms/>}/>
                 </Routes>
             </BrowserRouter>
         </div>

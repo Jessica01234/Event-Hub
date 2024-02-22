@@ -1,26 +1,29 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./createEventForm.css";
+import "./inPersonForm.css";
+// import ExpandArrow from '../images/Expand Arrow.png';
 
-function CreateEventForm() {
+
+function HybridForm() {
   const [eName, setEname] = useState('');
   const [eImage, setEimage] = useState('');
   const [eDay, setEday] = useState('');
   const [ePreview, setEpreview] = useState(''); 
-  const [eLocation, setElocation] = useState(''); 
+  const [VirtualLocation, setVirtualLocation] = useState(''); 
+  const [InPersonLocation, setInpersonLocation] = useState('');
 
   const navigate = useNavigate();
 
 
   const updateEventsInLocalStorage = (newEvent) => {
     // Retrieve existing events from localStorage
-    const existingEvents = JSON.parse(localStorage.getItem('InPersonEvents')) || [];
+    const existingEvents = JSON.parse(localStorage.getItem('HybridEvents')) || [];
   
     // Append the new event to the existing events
     const updatedEvents = [...existingEvents, newEvent];
   
     // Store the updated events in localStorage
-    localStorage.setItem('InPersonEvents', JSON.stringify(updatedEvents));
+    localStorage.setItem('HybridEvents', JSON.stringify(updatedEvents));
     // localStorage.clear();
     console.log(localStorage);
   };
@@ -33,7 +36,8 @@ function CreateEventForm() {
       eImage: eImage,
       eDay: eDay,
       ePreview: ePreview,
-      eLocation: eLocation
+      VirtualLocation: VirtualLocation,
+      InPersonLocation: InPersonLocation
     };
 
     updateEventsInLocalStorage(userDetails);
@@ -60,8 +64,16 @@ function CreateEventForm() {
 
   return (
     <>
-      <div className="CE">
-        <form onSubmit={handleSubmit} className="CEform">
+      <div className="CE hybridCE">
+      {/* <div className="homeBtn">
+             <button>Home
+              <Link to={'/'}>
+                  <img src={ExpandArrow} alt=""/>
+                </Link>
+             </button>
+            </div> */}
+
+        <form onSubmit={handleSubmit} className="CEform hybridForm">
         <h1>CREATE YOUR EVENT</h1>
         <label className="CELabel">Event Name</label>
           <input
@@ -96,16 +108,26 @@ function CreateEventForm() {
             }}
           />
 
-          <label className="CELabel">Event Location</label>
-          <input
-          required
-            id="ElocationInput"
-            type="text"
-            placeholder="Event Location"
-            onChange={(e) => {
-              setElocation(e.target.value);
-            }}
-          />
+            <label htmlFor="location">Virtual Location</label>
+            <select id="location" required onChange={(e) => {
+                    setVirtualLocation(e.target.value);
+                    }}>
+                <option value="">Select</option>
+                <option>WhatsApp</option>
+                <option>Telegram</option>
+                <option>Facebook</option>
+            </select>
+
+            <label className="CELabel">InPerson Location</label>
+            <input
+            required
+                id="ElocationInput"
+                type="text"
+                placeholder="Event Location"
+                onChange={(e) => {
+                setInpersonLocation(e.target.value);
+                }}
+            />
 
           <label className="CELabel">Event Image</label>
           <input
@@ -122,4 +144,4 @@ function CreateEventForm() {
   );
 }
 
-export default CreateEventForm;
+export default HybridForm;

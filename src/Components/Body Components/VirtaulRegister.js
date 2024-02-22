@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import './registerForm.css';
 import REGISTER from '../images/Rectangle 14.png';
 import {Link} from 'react-router-dom';
+import NavBar from "../NAVBAR/navbar";
 
-function InPersonRegisterEventForm({ eventName, onRegistration, counter }) {
+function VirtualRegisterEventForm({ eventName, onRegistration, counter }) {
   const [numberOfAttendees, setNumberOfAttendees] = useState();
 
   const handleRegistration = () => {
@@ -29,7 +30,7 @@ function InPersonRegisterEventForm({ eventName, onRegistration, counter }) {
             placeholder="No. Of Attendee "
           />
         
-        <p>{counter} person(s) registered for this event</p>
+        <p>{counter} person(s) have registered for this event</p>
         <button className="reg-btn" onClick={handleRegistration}>
           Register
         </button>
@@ -40,12 +41,12 @@ function InPersonRegisterEventForm({ eventName, onRegistration, counter }) {
 
 
 
-function InPersonRegisterForms() {
+function VirtualRegisterForms() {
   const [eventNames, setEventNames] = useState([]);
   const [counters, setCounters] = useState([]);
 
   useEffect(() => {
-    const events = localStorage.getItem('InPersonEvents');
+    const events = localStorage.getItem('VirtualEvents');
     const eventsparse = JSON.parse(events) || [];
     let newArr = [];
     eventsparse.forEach((event) => {
@@ -54,7 +55,7 @@ function InPersonRegisterForms() {
     setEventNames(newArr);
 
     // Initialize counters array with values from local storage or zeros
-    const storedCounters = JSON.parse(localStorage.getItem('InpersonCounters')) || Array(newArr.length).fill(0);
+    const storedCounters = JSON.parse(localStorage.getItem('VirtualCounters')) || Array(newArr.length).fill(0);
     setCounters(storedCounters);
     
   }, []);
@@ -76,51 +77,54 @@ function InPersonRegisterForms() {
   
 
   return (
-    <div className="MainAncestor">
-      <h1 className="GrandFatherh1">My InPerson Events</h1>
-      {eventNames ? (
-      <nav className="ancestor">
-        <aside className="aside">
-        <h1>
-          <Link to={'/register'}>INPERSON</Link>
-        </h1>
-        <h1>
-          <Link to={'/virtualRegister'}>VIRTUAL</Link>
-        </h1>
-        <h1>
-        <Link to={'/hybridRegister'}>HYBRID</Link>
-        </h1>
-        </aside>
+    <>
+    <NavBar />
+        <div className="MainAncestor">
+        <h1 className="GrandFatherh1">My Virtual Events</h1>
+        {eventNames ? (
+        <nav className="ancestor">
+            <aside className="aside">
+            <h1>
+            <Link to={'/register'}>INPERSON</Link>
+            </h1>
+            <h1>
+            <Link to={'/virtualRegister'}>VIRTUAL</Link>
+            </h1>
+            <h1>
+            <Link to={'/hybridRegister'}>HYBRID</Link>
+            </h1>
+            </aside>
+            
+            <div className="reg">
+            {eventNames.map((eventName, index) => (
+                <VirtualRegisterEventForm
+                    key={index}
+                    eventName={eventName}
+                    onRegistration={handleRegistration}
+                    counter={counters[index]}
+                />
+                ))}
+            </div>
+        </nav>
         
-        <div className="reg">
-          {eventNames.map((eventName, index) => (
-              <InPersonRegisterEventForm
-                key={index}
-                eventName={eventName}
-                onRegistration={handleRegistration}
-                counter={counters[index]}
-              />
-            ))}
+        ) : (
+        <section className="GrandFather">
+            <div className="father">
+            <div className="ImageContainer">
+                <img className="child1" src={REGISTER} alt=""/>
+            </div>
+            <nav className="mother">
+                <h1 className="child2">Your Event(s)</h1>
+                <p className="child3">You don't have any event to Register</p>
+                <button className="child4">
+                <Link to={'/createEvent'}>Create Now</Link>
+                </button>
+            </nav>
+            </div>
+        </section>
+        )}
         </div>
-      </nav>
-      
-      ) : (
-       <section className="GrandFather">
-         <div className="father">
-          <div className="ImageContainer">
-            <img className="child1" src={REGISTER} alt=""/>
-          </div>
-          <nav className="mother">
-            <h1 className="child2">Your Event(s)</h1>
-            <p className="child3">You don't have any event to Register</p>
-            <button className="child4">
-              <Link to={'/createEvent'}>Create Now</Link>
-            </button>
-          </nav>
-        </div>
-       </section>
-      )}
-    </div>
+    </>
   );
 }
-export default InPersonRegisterForms;
+export default  VirtualRegisterForms;
