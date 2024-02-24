@@ -1,6 +1,10 @@
 
 export const NavbarItems = [
-    
+    {
+        title: "Home",
+        url: "/",
+        cName: "NavLinks"
+    },
     {
         title: "Create Event",
         url: "/createEvent",

@@ -1,5 +1,11 @@
+*{
+    /* margin: 0; */
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .MainAncestor{
-    background: linear-gradient(119deg, #000 -2.11%, #000 63.58%);
+    /* background: linear-gradient(119deg, #000 -2.11%, #000 63.58%); */
     height: auto;
 }
 
@@ -7,37 +13,40 @@
     display: flex;
     flex-wrap: wrap;
     gap: 5pc;
-    /* width: 100%; */
+    width: 100%;
+    background: linear-gradient(119deg, #000 -2.11%, #000 63.58%);
     /* justify-content: space-between; */
 }
 
 .aside{
     display: flex;
     flex-direction: column;
-    width: 10%;
+    width: 15%;
     background: #fff;
-    height: 60vh;
-    padding: 15px;
+    height: 70vh;
+    padding: 10px;
     line-height: 5em;
     border-radius: 0 20px 20px 0;
-    /* border-radius: 2em; */
 }
 
 aside a{
     font-size: 1.5rem;
     color: #000;
+    font-family: "Kanit", sans-serif;
+    font-weight: 800;
+    font-style: normal;
 }
 
 .reg{
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 5pc;
     width: 70%;
     /* background-color: #fff; */
 }
 
 .registerComp{
-    width: 40%;
+    width: 45%;
 }
 
 .register{
@@ -47,8 +56,10 @@ aside a{
     width: 100%;
     background-color: #fff;
     border-radius: 20px;
-    height: 50vh;
+    height: auto;
+    padding-bottom: 1pc;
     font-family: sans-serif;
+    margin-bottom: 3pc;
 }
 
 .register h1{
@@ -58,6 +69,9 @@ aside a{
 .register label{
     font-size: larger;
     margin-bottom: 1pc;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .register input{
@@ -65,7 +79,7 @@ aside a{
     height: 5vh;
     border-radius: 6px;
     border: none;
-    padding-left: 5em;
+    padding-left: 3em;
     border: 2px solid #000;
 }
 
@@ -83,6 +97,32 @@ aside a{
     padding: 1rem 3rem;
     color: #fff;
     cursor: pointer;
+}
+
+.shareBtnNav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#shareBtnP{
+    font-size: larger;
+    margin-bottom: 1pc;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.shareBtn{
+    background: #F5167E;
+    border: none;
+    font-size: large;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    color: #fff;
+    cursor: pointer;
+    border: 2px solid #ccc;
+    border-radius: 10px;
 }
 
 .GrandFatherh1{
@@ -156,5 +196,38 @@ aside a{
         display: flex;
         align-items: center;
         width: 100%;
+    }
+}
+/* REGISTER PAGE RESPONSIVE */
+@media screen and (min-width: 600px) and (max-width: 1200px){
+    .ancestor{
+        width: 100%;
+        gap: 2pc;
+    }
+.registerComp{
+    width: 40%;
+}
+
+.reg{
+    width: 80%;
+    gap: 3pc;
+}
+
+    .aside{
+        width: 15%;
+    }
+
+    .aside a{
+        font-size: 1rem;
+        font-weight: 700;
+    }
+    .register input{
+        padding-left: 0;
+    }
+    .register p{
+        font-family: "Dancing Script", cursive;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-weight: normal;
     }
 }

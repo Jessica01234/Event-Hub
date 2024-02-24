@@ -1,9 +1,11 @@
-body{
+body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}        /* NAVBAR STYLING */
-.NavbarItems{
+  }
+  
+  /* NAVBAR STYLING */
+  .NavbarItems {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -11,41 +13,45 @@ body{
     position: fixed;
     z-index: 1000;
     background-color: #000;
-    /* border-radius: 10px; */
-}
-
-#CENav{
+  }
+  
+  #CENav {
     margin-top: -2rem;
-}
-
-#DBNav{
-    margin-top: -1.5rem;
-}
-
-/* #SUNav{
+  }
+  
+  #DBNav {
+    margin-top: -1rem;
+  }
+  
+  #HRNav {
     margin-top: -2rem;
-}*/
-
-#RENav{
+  }
+  
+  #VRNav {
     margin-top: -2rem;
-} 
-.NavLogo{
+  }
+  
+  #RENav {
+    margin-top: -2rem;
+  }
+  
+  .NavLogo {
     text-decoration: none;
     font-size: 3.5rem;
     cursor: pointer;
     color: #fff;
-}
-
-.NavbarMenu{
+  }
+  
+  .NavbarMenu {
     display: grid;
-    grid-template-columns: repeat(6,auto);
+    grid-template-columns: repeat(6, auto);
     grid-gap: 10px;
     list-style: none;
     align-items: center;
     z-index: 1000;
-}
-
-.NavLinks{
+  }
+  
+  .NavLinks {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,66 +63,68 @@ body{
     font-style: normal;
     line-height: normal;
     color: #fff;
-}
-
-.menuBar{
+  }
+  
+  .NavLinks.active {
+    border-bottom: 2px solid #fff; /* You can adjust the color and thickness as needed */
+  }
+  
+  .menuBar {
     height: 50px;
-}
-
-.menuTimes{
+  }
+  
+  .menuTimes {
     height: 50px;
-}
-
-
-.MenuIcons{
+  }
+  
+  .MenuIcons {
     display: none;
     cursor: pointer;
-}
-
-@media screen and (max-width:850px) {
-    .NavLogo{
-        font-size: 2rem;
-        color: #000;
+  }
+  
+  @media screen and (max-width: 850px) {
+    .NavLogo {
+      font-size: 2rem;
+      color: #000;
     }
-    .NavbarItems{
-        justify-content: space-between;
-        padding: 0 5px;
-        background-color: #fff;
+    .NavbarItems {
+      justify-content: space-between;
+      padding: 0 5px;
+      background-color: #fff;
     }
-    .NavbarMenu{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        width: 100%;
-        height: auto;
-        background: #000;
-        position: absolute;
-        top: 0;
-        left: -100%;
-        opacity: 0;
-        /* align-items: stretch; */
-        padding: 80px 0 30px 0;
-        margin: 0;
-        transition: 0.3s ease-in-out;
-        border-radius: 13px;
+    .NavbarMenu {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 100%;
+      height: auto;
+      background: #000;
+      position: absolute;
+      top: 0;
+      left: -100%;
+      opacity: 0;
+      padding: 80px 0 30px 0;
+      margin: 0;
+      transition: 0.3s ease-in-out;
+      border-radius: 13px;
     }
-
-    .NavbarMenu.active{
-        left: 0;
-        z-index: -1;
-        opacity: 1;
-        transition: 0.3s ease-in-out;
+  
+    .NavbarMenu.active {
+      left: 0;
+      z-index: -1;
+      opacity: 1;
+      transition: 0.3s ease-in-out;
     }
-
-    .NavLinks{
-        display: block;
-        width: 100%;
-        font-size: 1.2rem;
-        padding: 2rem 0;
-        /* color: ; */
+  
+    .NavLinks {
+      display: block;
+      width: 100%;
+      font-size: 1.2rem;
+      padding: 2rem 0;
     }
-    
-    .MenuIcons{
-        display: block;
+  
+    .MenuIcons {
+      display: block;
     }
-}
+  }
+  

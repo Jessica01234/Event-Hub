@@ -3,7 +3,6 @@ import React from 'react';
 import { NavbarItems } from './navbarItems';
 import { Link } from 'react-router-dom';
 import 'animate.css';
-// import { Container,Row,Col } from 'react-bootstrap';
 import MenuBar from '../images/hamburger.png';
 import MenuTimes from '../images/download.png';
 
@@ -17,20 +16,19 @@ class NavBar extends React.Component {
     // Retrieving user details from local storage upon component mount
     const userDetailsString = localStorage.getItem('email');
     const userDetails = JSON.parse(userDetailsString);
-  
+
     // Checking if the user is signed in and has details
     if (userDetails && userDetails.fname) {
       // Set the user details in the state
       this.setState({ user: userDetails });
     }
   }
-  
 
   HandleClick = () => {
     this.setState({ Clicked: !this.state.Clicked });
   };
 
-  //Rendering the components 
+  //Rendering the components
   render() {
     const { user } = this.state;
 
@@ -42,7 +40,7 @@ class NavBar extends React.Component {
               Event MGT
             </Link>
           </h1>
- 
+
           <div onClick={this.HandleClick} className='MenuIcons'>
             <img className='menuBar' src={this.state.Clicked ? MenuTimes : MenuBar} alt='' />
           </div>
@@ -51,13 +49,26 @@ class NavBar extends React.Component {
             {NavbarItems.map((item, index) => {
               return (
                 <li key={index}>
-                  <Link to={item.url} className={item.cName}>
+                  <Link
+                    to={item.url}
+                    className={`${item.cName} ${window.location.pathname === item.url ? 'active' : ''}`}
+                  >
                     {item.title}
                   </Link>
                 </li>
               );
             })}
-            {user ? <li className='NavLinks'>{user.fname}</li>: <li><Link to={'/signUp'} className='NavLinks'>SignUp</Link></li>}
+            {user ? (
+              <li className={`NavLinks ${window.location.pathname === '/profile' ? 'active' : ''}`}>
+                {user.fname}
+              </li>
+            ) : (
+              <li>
+                <Link to={'/signUp'} className={`NavLinks ${window.location.pathname === '/signUp' ? 'active' : ''}`}>
+                  SignUp
+                </Link>
+              </li>
+            )}
           </ul>
         </div>
       </>

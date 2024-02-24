@@ -3,8 +3,52 @@ import './registerForm.css';
 import REGISTER from '../images/Rectangle 14.png';
 import {Link} from 'react-router-dom';
 import NavBar from "../NAVBAR/navbar";
+import { WhatsappShareButton, TelegramShareButton, FacebookShareButton } from 'react-share';
 
-function HybridRegisterEventForm({ eventName, onRegistration, counter }) {
+// Function to render share buttons for each event
+function renderShareButtons(eventName, events) {
+  if (!events) return null;
+
+  const location = events.VirtualLocation;
+  const decodedLink = decodeURIComponent('https://event-mgt.vercel.app');
+  const shareMessage = `Check out my upcoming ${eventName} event on ${events.eDay} at ${events.eLocation}. It's about: ${events.ePreview}. Link: ${decodedLink}`;
+
+  if (location === 'WhatsApp') {
+    return (
+      <WhatsappShareButton
+        url={`whatsapp://send?text=${decodeURIComponent(shareMessage)}`}
+        title={eventName}
+        separator=" - "
+      >
+        <button className='shareBtn'>Share Now</button>
+      </WhatsappShareButton>
+    );
+  } else if (location === 'Telegram') {
+    return (
+      <TelegramShareButton
+      url={`telegram://send?text==${decodeURIComponent(shareMessage)}`}
+      title={eventName}
+      separator=" - "
+      >
+        <button className='shareBtn'>Share Now</button>
+      </TelegramShareButton>
+    );
+  } else if (location === 'Facebook') {
+    return (
+      <FacebookShareButton
+        url={`facebook://send?text=${decodeURIComponent(shareMessage)}`}
+        title={eventName}
+        separator=" - "
+      >
+        <button className='shareBtn'>Share Now</button>
+      </FacebookShareButton>
+    );
+  }
+  // You can add more conditions or handle other cases here
+  return null;
+}
+
+function HybridRegisterEventForm({ eventName, onRegistration, counter, eventDetails }) {
   const [numberOfAttendees, setNumberOfAttendees] = useState();
 
   const handleRegistration = () => {
@@ -22,32 +66,37 @@ function HybridRegisterEventForm({ eventName, onRegistration, counter }) {
       <div className="register">
         <h1>{eventName}</h1>
         <label>Register Your Guest(s)</label>
-          <input
-            type="number"
-            value={numberOfAttendees}
-            onChange={(e) => setNumberOfAttendees(parseInt(e.target.value))}
-            required
-            placeholder="No. Of Attendee "
-          />
-        
-        <p>{counter} person(s) have registered for this event</p>
+        <input
+          type="number"
+          value={numberOfAttendees}
+          onChange={(e) => setNumberOfAttendees(parseInt(e.target.value))}
+          required
+          placeholder="No. Of Attendee "
+        />
+        <p>{counter} person(s) are registered</p>
         <button className="reg-btn" onClick={handleRegistration}>
           Register
         </button>
+        <nav className="shareBtnNav">
+          <div id="shareBtnP">Share Your event</div>
+          <div id="shareBtnP">on the Virtual Location</div>
+          {/* Rendering share buttons for each event */}
+          {renderShareButtons(eventName, eventDetails)}
+        </nav>
       </div>
     </div>
   );
 }
 
-
-
 function HybridRegisterForms() {
   const [eventNames, setEventNames] = useState([]);
   const [counters, setCounters] = useState([]);
+  const [eventsparse, setEventsparse] = useState([]);
 
   useEffect(() => {
-    const events = localStorage.getItem('HybridEvents');
-    const eventsparse = JSON.parse(events) || [];
+    const Events = localStorage.getItem('HybridEvents');
+    const eventsparse = JSON.parse(Events) || [];
+    setEventsparse(eventsparse);
     let newArr = [];
     eventsparse.forEach((event) => {
       newArr.push(event.eName);
@@ -72,16 +121,16 @@ function HybridRegisterForms() {
     setCounters(newCounters);
   
     // Save the updated counters array to local storage
-    localStorage.setItem('counters', JSON.stringify(newCounters));
+    localStorage.setItem('HybridCounters', JSON.stringify(newCounters));
   };
   
 
   return (
     <>
-        <NavBar />
+        <NavBar cName="HRNav"/>
         <div className="MainAncestor">
         <h1 className="GrandFatherh1">My Hybrid Events</h1>
-        {eventNames ? (
+        {eventNames.length > 0 ? (
         <nav className="ancestor">
             <aside className="aside">
             <h1>
@@ -102,6 +151,7 @@ function HybridRegisterForms() {
                     eventName={eventName}
                     onRegistration={handleRegistration}
                     counter={counters[index]}
+                  eventDetails={eventsparse[index]}
                 />
                 ))}
             </div>

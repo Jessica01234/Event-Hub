@@ -24,7 +24,6 @@ function HybridForm() {
   
     // Store the updated events in localStorage
     localStorage.setItem('HybridEvents', JSON.stringify(updatedEvents));
-    // localStorage.clear();
     console.log(localStorage);
   };
 

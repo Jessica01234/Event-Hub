@@ -43,7 +43,7 @@
 .social img{
     display: flex;
     flex-direction: column;
-    height: 30px;
+    height: 10vh;
     padding: 0.5rem;
 }
 
