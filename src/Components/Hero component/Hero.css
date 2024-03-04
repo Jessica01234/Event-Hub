@@ -39,8 +39,10 @@
     background: #F5167E;
     border: none;
     padding: 1rem 2rem;
-    font-size: large;
-    font-weight: bold;
+    font-size: larger;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .hero-text button a{

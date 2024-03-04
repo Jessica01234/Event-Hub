@@ -30,14 +30,14 @@ function Virtual(){
         if (userDetails) {
             // If user is signed in, render button for creating event
             return (
-                <button>
+                <button className="CEbtn">
                     <Link to={'/virtualForm'}>Create Your Event</Link>
                 </button>
             );
         } else {
             // If user is not signed in, render button for signing up
             return (
-                <button>
+                <button className="SEbtn">
                     <Link to={'/signup'}>SignUp For Free</Link>
                 </button>
             );

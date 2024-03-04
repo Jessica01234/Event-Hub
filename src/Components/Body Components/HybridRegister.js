@@ -129,7 +129,6 @@ function HybridRegisterForms() {
     <>
         <NavBar cName="HRNav"/>
         <div className="MainAncestor">
-        <h1 className="GrandFatherh1">My Hybrid Events</h1>
         {eventNames.length > 0 ? (
         <nav className="ancestor">
             <aside className="aside">
@@ -144,16 +143,19 @@ function HybridRegisterForms() {
             </h1>
             </aside>
             
-            <div className="reg">
-            {eventNames.map((eventName, index) => (
-                <HybridRegisterEventForm
-                    key={index}
-                    eventName={eventName}
-                    onRegistration={handleRegistration}
-                    counter={counters[index]}
-                  eventDetails={eventsparse[index]}
-                />
-                ))}
+            <div>
+              <h1 className="GrandFatherh1">My Hybrid Events</h1>
+              <div className="reg">
+              {eventNames.map((eventName, index) => (
+                  <HybridRegisterEventForm
+                      key={index}
+                      eventName={eventName}
+                      onRegistration={handleRegistration}
+                      counter={counters[index]}
+                    eventDetails={eventsparse[index]}
+                  />
+                  ))}
+              </div>
             </div>
         </nav>
         

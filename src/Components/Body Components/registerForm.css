@@ -5,48 +5,41 @@
 }
 
 .MainAncestor{
-    /* background: linear-gradient(119deg, #000 -2.11%, #000 63.58%); */
+    background: linear-gradient(119deg, #000 -2.11%, #000 63.58%);
     height: auto;
 }
 
 .ancestor{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5pc;
     width: 100%;
-    background: linear-gradient(119deg, #000 -2.11%, #000 63.58%);
-    /* justify-content: space-between; */
+    padding-top: 7pc;
 }
 
 .aside{
     display: flex;
-    flex-direction: column;
-    width: 15%;
-    background: #fff;
-    height: 70vh;
-    padding: 10px;
-    line-height: 5em;
-    border-radius: 0 20px 20px 0;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-color: #F5167E;
 }
 
-aside a{
+.aside a{
     font-size: 1.5rem;
-    color: #000;
+    color: #fff;
     font-family: "Kanit", sans-serif;
     font-weight: 800;
     font-style: normal;
+    text-decoration: none;
 }
 
 .reg{
     display: flex;
     flex-wrap: wrap;
-    gap: 5pc;
-    width: 70%;
-    /* background-color: #fff; */
+    justify-content: space-around;
+    width: 100%;
 }
 
 .registerComp{
-    width: 45%;
+    width: 30%;
 }
 
 .register{
@@ -126,16 +119,20 @@ aside a{
 }
 
 .GrandFatherh1{
-    padding-top: 3em;
+    padding-top: 1em;
     display: flex;
     justify-content: center;
     color: #fff;
+}
+.GrandFather{
+    padding-top: 10pc;
 }
 .father{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 2em 0;
+    /* padding: 4em 0; */
+    color: #ccc;
 }
 
 .mother{
@@ -157,13 +154,25 @@ aside a{
 .child3{
     font-size: 20px;
 }
+
 .child4{
-    padding: 1rem;
-    border-radius:5rem;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    background: #F5167E;
     border: none;
-    border:1px solid #ccc;
-    background-color: #ccc;
-    font-size: 20px;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    margin-left: 3rem;
+    font-size: larger;
+    text-decoration: none;
+    color: #fff;
+}
+
+.child4:hover{
+    cursor: pointer;
+    color: #fff;
+    /* border-radius: 0.5rem; */
+    text-decoration: underline;
 }
 
 .child2,
@@ -174,7 +183,10 @@ aside a{
 }
 .child4 a{
     text-decoration: none;
-    color: #000;
+    color: #fff;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 @media screen and (min-width: 280px) and (max-width: 850px){
     .father{
@@ -184,10 +196,14 @@ aside a{
     .child1{
         width: 100%;
         height: 80vh;
+        padding: 1pc;
     }
     .child2{
         display: flex;
         justify-content: center;
+    }
+    .child3{
+        font-size: 18px;
     }
     .child4{
         margin-left: 0;
@@ -201,30 +217,87 @@ aside a{
 /* REGISTER PAGE RESPONSIVE */
 @media screen and (min-width: 600px) and (max-width: 1200px){
     .ancestor{
-        width: 100%;
-        gap: 2pc;
-    }
-.registerComp{
-    width: 40%;
-}
+            width: 100%;
+            padding-top: 5pc;
+        }
 
-.reg{
-    width: 80%;
-    gap: 3pc;
+    .registerComp{
+        width: 45%;
+    }
+
+    .reg{
+        width: 100%;
 }
 
     .aside{
-        width: 15%;
+        width: 100%;
     }
 
     .aside a{
         font-size: 1rem;
         font-weight: 700;
     }
+
+    .register{
+        padding: 0 2pc 2pc 2pc;
+    }
     .register input{
         padding-left: 0;
+        width: 80%;
+        text-align: center;
+    }
+
+    .register label{
+        text-align: center;
+    }
+
+    .register p{
+        text-align: center;
+        font-family: "Dancing Script", cursive;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-weight: normal;
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 600px){
+    .ancestor{
+        width: 100%;
+        padding-top: 5pc;
+    }
+    .registerComp{
+        width: 100%;
+    }
+
+    .reg{
+        width: 100%;
+        justify-content: space-around;
+        padding: 3pc;
+    }
+
+    .register{
+        padding: 2pc;
+    }
+    .aside{
+        width: 100%;
+    }
+
+    .aside a{
+        font-size: 0.9rem;
+        font-weight: 700;
+    }
+
+    .register input{
+        text-align: center;
+        padding-left: 0;
+        width: 80%;
+    }
+    
+    .register label{
+        text-align: center;
     }
     .register p{
+        text-align: center;
         font-family: "Dancing Script", cursive;
         font-optical-sizing: auto;
         font-style: normal;

@@ -35,7 +35,7 @@ function SignUpComponent(){
                 <input id="emailInput"required type="email" placeholder="example@gmail.com" onChange={(e) => setusersDetails({...usersDetails, email: e.target.value})}/>
 
                 <label>Password</label>
-                <input id="passwordInput" type="password" required placeholder="must not be less than 8 character" onChange={(e) => setusersDetails({...usersDetails, password: e.target.value})}/>
+                <input id="passwordInput" type="password" required placeholder="must not be less than 5 character" onChange={(e) => setusersDetails({...usersDetails, password: e.target.value})}/>
                
                 <Link to={"/createEvent"}>
                    <button  className="signup-Button" onClick={HandleClicked}>SignUp</button>

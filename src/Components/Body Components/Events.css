@@ -89,6 +89,7 @@
     text-decoration: none;
     color:  #000;
 }
+
 .eventVideo{
     display: flex;
     justify-content: center;
@@ -104,134 +105,176 @@
 
 .InpersonAncestor{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     padding-top: 2rem;
+    width: 100%;
+    /* background-color: rebeccapurple; */
 }
 
 .InPersonFather{
     padding: 5rem 1rem;
     font-family: sans-serif;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .InPersonMother{
     padding: 5rem 1rem;
+    width: 50%;
 }
 .InPersonMother img{
-    /* width: 50%; */
-    height: 50vh;
-    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+    object-fit: contain;
 }
 
 .InPersonFather h1{
     font-size: 2rem;
+    text-align: center;
 }
 
 .InPersonFather p{
-    font-size: larger;
+    font-size: 1.5pc;
+    text-align: center;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+
 }
 
-.InPersonFather button{
-    margin: 1rem 10rem;
+.CEbtn{
+    margin-top: 2pc;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    background: #F5167E;
     border: none;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    padding: 1rem 0.5rem;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    margin-left: 3rem;
+    font-size: larger;
+    color: #fff;
 }
 
-.InPersonFather button a{
+.CEbtn a{
     text-decoration: none;
-    font-size: large;
-    color: #000;
+    color: #fff;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
+.SEbtn{
+    border-radius: 50px;
+   background: #F5167E;
+   border: none;
+   padding: 1rem 2rem;
+   font-size: larger;
+   font-family: "Dancing Script", cursive;
+   font-optical-sizing: auto;
+   font-style: normal;
+}
+
+.SEbtn a{
+    text-decoration: none;
+    color: #fff;
+}
 /* STYLING THE VIRTUAL COMPONENET */
 
 
 .VirtualAncestor{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     padding-top: 2rem;
+    width: 100%;
 }
 
 .VirtualFather{
     padding: 5rem 1rem;
     font-family: sans-serif;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .VirtualMother{
     padding: 5rem 1rem;
+    width: 50%;
 }
 
 .VirtualMother img{
-    height: 50vh;
-    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+    object-fit: contain;
 }
 
 .VirtualFather h1{
     font-size: 2rem;
+    text-align: center;
 }
 
 .VirtualFather p{
-    font-size: larger;
-}
-
-.VirtualFather button{
-    margin: 1rem 10rem;
-    border: none;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    padding: 1rem 0.5rem;
-}
-
-.VirtualFather button a{
-    text-decoration: none;
-    font-size: large;
-    color: #000;
+    font-size: 1.5pc;
+    text-align: center;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 /* STYLING THE HYBRID COMPONENET */
 
 .HybridAncestor{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    flex-wrap: wrap;
     padding-top: 2rem;
+    width: 100%;
 }
 
 .HybridFather{
     padding: 5rem 1rem;
     font-family: sans-serif;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .HybridMother{
     padding: 5rem 1rem;
+    width: 50%;
 }
 
 .HybridMother img{
-    height: 50vh;
-    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+    object-fit: contain;
 }
 
 .HybridFather h1{
     font-size: 2rem;
+    align-items: center;
 }
 
 .HybridFather p{
-    font-size: larger;
-    padding: 0 15rem 0rem 0;
-}
-
-.HybridFather button{
-    margin: 1rem 10rem;
-    border: none;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    padding: 1rem 0.5rem;
-}
-
-.HybridFather button a{
-    text-decoration: none;
-    font-size: large;
-    color: #000;
+    font-size: 1.5pc;
+    text-align: center;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 @media screen and (min-width: 280px) and (max-width: 850px){
@@ -279,5 +322,36 @@
     .Mother2,
     .Mother3{
         height: auto;
+    }
+}
+
+/* MAKING THE THREE EVENTS TYPE RESPONSIVE */
+
+@media screen and (min-width: 50px) and (max-width: 849px){
+    .InPersonFather{
+        width: 100%;
+    }
+
+    .InPersonMother{
+        width: 100%;
+        padding: 0;
+    }
+
+    .VirtualFather{
+        width: 100%;
+    }
+
+    .VirtualMother{
+        width: 100%;
+        padding: 0;
+    }
+
+    .HybridFather{
+        width: 100%;
+    }
+
+    .HybridMother{
+        width: 100%;
+        padding: 0;
     }
 }

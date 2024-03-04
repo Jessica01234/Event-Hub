@@ -21,7 +21,7 @@ function VirtualForm() {
   
     // Store the updated events in localStorage
     localStorage.setItem('VirtualEvents', JSON.stringify(updatedEvents));
-    // localStorage.clear();
+    localStorage.clear();
     console.log(localStorage);
   };
 

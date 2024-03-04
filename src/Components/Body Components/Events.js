@@ -1,5 +1,6 @@
 import React from "react";
 import './Events.css';
+import 'animate.css';
 import InPerson from '../Assets/inperson-event.webm';
 import Virtual from '../Assets/virtual-event.webm';
 import Hybrid from '../Assets/hybrid-event.webm';
@@ -7,7 +8,7 @@ import { Link } from "react-router-dom";
 
 function Events(){
     return(
-        <div className="Ancestor">
+        <div className="Ancestor animate__animated animate__fadeInUp">
             <h1 className="h1">Simple ways to host all your events</h1>
            <nav className="Father">
            <section className="Mother1">

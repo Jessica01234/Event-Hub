@@ -77,7 +77,7 @@ function InPersonRegisterForms() {
 
   return (
     <div className="MainAncestor">
-      <h1 className="GrandFatherh1">My InPerson Events</h1>
+      {/* <h1 className="GrandFatherh1">My InPerson Events</h1> */}
       {eventNames.length > 0 ? (
         <nav className="ancestor">
           <aside className="aside">
@@ -92,25 +92,28 @@ function InPersonRegisterForms() {
             </h1>
           </aside>
   
-          <div className="reg">
-            {eventNames.map((eventName, index) => (
-              <InPersonRegisterEventForm
-                key={index}
-                eventName={eventName}
-                onRegistration={handleRegistration}
-                counter={counters[index]}
-              />
-            ))}
+          <div>
+            <h1 className="GrandFatherh1">My InPerson Events</h1>
+            <div className="reg">
+              {eventNames.map((eventName, index) => (
+                <InPersonRegisterEventForm
+                  key={index}
+                  eventName={eventName}
+                  onRegistration={handleRegistration}
+                  counter={counters[index]}
+                />
+              ))}
+            </div>
           </div>
         </nav>
       ) : (
         <section className="GrandFather">
           {console.log("eventNames in else:", eventNames)}
           <div className="father">
-            <div className="ImageContainer">
+            <div className="ImageContainer animate__animated animate__fadeInUp">
               <img className="child1" src={REGISTER} alt=""/>
             </div>
-            <nav className="mother">
+            <nav className="mother animate__animated animate__fadeInDown">
               <h1 className="child2">Your Event(s)</h1>
               <p className="child3">You don't have any event to Register</p>
               <button className="child4">

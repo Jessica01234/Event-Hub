@@ -122,7 +122,6 @@ function VirtualRegisterForms() {
     <>
       <NavBar cName="VRNav" />
       <div className="MainAncestor">
-        <h1 className="GrandFatherh1">My Virtual Events</h1>
         {eventNames.length > 0 ? (
           <nav className="ancestor">
             <aside className="aside">
@@ -136,16 +135,20 @@ function VirtualRegisterForms() {
                 <Link to={'/hybridRegister'}>HYBRID</Link>
               </h1>
             </aside>
-            <div className="reg">
-              {eventNames.map((eventName, index) => (
-                <VirtualRegisterEventForm
-                  key={index}
-                  eventName={eventName}
-                  onRegistration={handleRegistration}
-                  counter={counters[index]}
-                  eventDetails={eventsparse[index]}
-                />
-              ))}
+            
+            <div>
+              <h1 className="GrandFatherh1">My Virtual Events</h1>
+              <div className="reg">
+                {eventNames.map((eventName, index) => (
+                  <VirtualRegisterEventForm
+                    key={index}
+                    eventName={eventName}
+                    onRegistration={handleRegistration}
+                    counter={counters[index]}
+                    eventDetails={eventsparse[index]}
+                  />
+                ))}
+              </div>
             </div>
           </nav>
         ) : (
