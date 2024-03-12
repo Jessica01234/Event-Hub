@@ -108,7 +108,6 @@ function InPersonRegisterForms() {
         </nav>
       ) : (
         <section className="GrandFather">
-          {console.log("eventNames in else:", eventNames)}
           <div className="father">
             <div className="ImageContainer animate__animated animate__fadeInUp">
               <img className="child1" src={REGISTER} alt=""/>

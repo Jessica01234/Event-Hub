@@ -63,15 +63,7 @@ function HybridForm() {
 
   return (
     <>
-      <div className="CE hybridCE">
-      {/* <div className="homeBtn">
-             <button>Home
-              <Link to={'/'}>
-                  <img src={ExpandArrow} alt=""/>
-                </Link>
-             </button>
-            </div> */}
-
+      <div className="CE">
         <form onSubmit={handleSubmit} className="CEform hybridForm">
         <h1>CREATE YOUR EVENT</h1>
         <label className="CELabel">Event Name</label>
