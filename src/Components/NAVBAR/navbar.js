@@ -37,7 +37,7 @@ class NavBar extends React.Component {
         <div id={this.props.cName} className='NavbarItems'>
           <h1 className='NavbarLogo'>
             <Link to={"/"} className='NavLogo'>
-              Event MGT
+              Event Hub
             </Link>
           </h1>
 
