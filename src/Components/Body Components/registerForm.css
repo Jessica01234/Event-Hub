@@ -1,306 +1,76 @@
-*{
-    /* margin: 0; */
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.MainAncestor{
-    background: linear-gradient(119deg, #000 -2.11%, #000 63.58%);
-    height: auto;
-}
-
-.ancestor{
-    width: 100%;
-    padding-top: 7pc;
-}
-
-.aside{
+.regContainer{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    width: 100%;
-    background-color: #F5167E;
-}
-
-.aside a{
-    font-size: 1.5rem;
-    color: #fff;
-    font-family: "Kanit", sans-serif;
-    font-weight: 800;
-    font-style: normal;
-    text-decoration: none;
-}
-
-.reg{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width: 100%;
-}
-
-.registerComp{
-    width: 30%;
-}
-
-.register{
-    display: flex;
     flex-direction: column;
-    align-items: center;
     width: 100%;
-    background-color: #fff;
-    border-radius: 20px;
-    height: auto;
-    padding-bottom: 1pc;
-    font-family: sans-serif;
-    margin-bottom: 3pc;
+    min-height: 100vh;
+    background: #1d2b3a;
 }
 
-.register h1{
-    font-size: 2em;
+.regContainer h1{
+    display: flex;
+    justify-content: center;
+    color: #fff;
 }
 
-.register label{
-    font-size: larger;
-    margin-bottom: 1pc;
-    font-family: "Dancing Script", cursive;
-    font-optical-sizing: auto;
-    font-style: normal;
-}
-
-.register input{
+.regForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 50%;
-    height: 5vh;
+    position: relative;
+    gap: 30px;
+    border: 1px solid #fff;
     border-radius: 6px;
-    border: none;
-    padding-left: 3em;
-    border: 2px solid #000;
-}
-
-.register p{
-    font-style: italic;
-    font-weight: 600;
-}
-
-.reg-btn{
-    border-radius: 50px;
-    background: #F5167E;
-    border: none;
-    font-size: large;
-    font-weight: bold;
-    padding: 1rem 3rem;
-    color: #fff;
-    cursor: pointer;
-}
-
-.shareBtnNav{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#shareBtnP{
-    font-size: larger;
-    margin-bottom: 1pc;
-    font-family: "Dancing Script", cursive;
-    font-optical-sizing: auto;
-    font-style: normal;
-}
-
-.shareBtn{
-    background: #F5167E;
-    border: none;
-    font-size: large;
-    font-weight: bold;
-    padding: 1rem 2rem;
-    color: #fff;
-    cursor: pointer;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-}
-
-.GrandFatherh1{
-    padding-top: 1em;
-    display: flex;
-    justify-content: center;
-    color: #fff;
-}
-.GrandFather{
-    padding-top: 10pc;
-}
-.father{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    /* padding: 4em 0; */
-    color: #ccc;
-}
-
-.mother{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    line-height: 5rem;
-}
-.child1{
     height: 70vh;
-    width: auto;
+    padding: 30px;
+}
+.regForm input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgb(255, 255,255, 0.25);
+    background: #1d2b3a;
+    border-radius: 5px;
+    outline: none;
+    color: #fff;
+    font-size: 1em;
 }
 
-.child2{
-    display: flex;
-    justify-content: center;
+.regForm label{
+    position: absolute;
+    left: 0;
+    padding: 10px 0 0 50px;
+    pointer-events: none;
+    font-size: 20px;
+    color: rgb(255, 255,255, 0.25);
+    text-transform: uppercase;
+    transition: 0.5s
+}
+
+.regForm input:valid ~ label,
+.regForm input:focus ~ label
+{
+    color: #00dfc4;
+    transform: translateX(20px) translateY(-7px);
+    font-size: 15px;
+    padding: 0 10px;
+    /* background: #1d2b3a; */
+    border-left: 1px solid #00dfc4;
+    border-right: 1px solid #00dfc4;
+}
+
+.RegBtn{
+    height: 7vh;
+    border: none;
+    border: 1px solid gray;
+    background-color: #49c1a2;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #000;
     font-size: 25px;
 }
-.child3{
-    font-size: 20px;
-}
 
-.child4{
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    background: #F5167E;
-    border: none;
-    padding: 1rem 2rem;
-    font-weight: bold;
-    margin-left: 3rem;
-    font-size: larger;
-    text-decoration: none;
+.RegBtn:hover{
     color: #fff;
-}
-
-.child4:hover{
-    cursor: pointer;
-    color: #fff;
-    /* border-radius: 0.5rem; */
-    text-decoration: underline;
-}
-
-.child2,
-.child3,
-.child4{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: 900;
-}
-.child4 a{
-    text-decoration: none;
-    color: #fff;
-    font-family: "Dancing Script", cursive;
-    font-optical-sizing: auto;
-    font-style: normal;
-}
-@media screen and (min-width: 280px) and (max-width: 850px){
-    .father{
-        width: 100%;
-    }
-
-    .child1{
-        width: 100%;
-        height: 80vh;
-        padding: 1pc;
-    }
-    .child2{
-        display: flex;
-        justify-content: center;
-    }
-    .child3{
-        font-size: 18px;
-    }
-    .child4{
-        margin-left: 0;
-    }
-    .mother{
-        display: flex;
-        align-items: center;
-        width: 100%;
-    }
-}
-/* REGISTER PAGE RESPONSIVE */
-@media screen and (min-width: 600px) and (max-width: 1200px){
-    .ancestor{
-            width: 100%;
-            padding-top: 5pc;
-        }
-
-    .registerComp{
-        width: 45%;
-    }
-
-    .reg{
-        width: 100%;
-}
-
-    .aside{
-        width: 100%;
-    }
-
-    .aside a{
-        font-size: 1rem;
-        font-weight: 700;
-    }
-
-    .register{
-        padding: 0 2pc 2pc 2pc;
-    }
-    .register input{
-        padding-left: 0;
-        width: 80%;
-        text-align: center;
-    }
-
-    .register label{
-        text-align: center;
-    }
-
-    .register p{
-        text-align: center;
-        font-family: "Dancing Script", cursive;
-        font-optical-sizing: auto;
-        font-style: normal;
-        font-weight: normal;
-    }
-}
-
-@media screen and (min-width: 100px) and (max-width: 600px){
-    .ancestor{
-        width: 100%;
-        padding-top: 5pc;
-    }
-    .registerComp{
-        width: 100%;
-    }
-
-    .reg{
-        width: 100%;
-        justify-content: space-around;
-        padding: 3pc;
-    }
-
-    .register{
-        padding: 2pc;
-    }
-    .aside{
-        width: 100%;
-    }
-
-    .aside a{
-        font-size: 0.9rem;
-        font-weight: 700;
-    }
-
-    .register input{
-        text-align: center;
-        padding-left: 0;
-        width: 80%;
-    }
-    
-    .register label{
-        text-align: center;
-    }
-    .register p{
-        text-align: center;
-        font-family: "Dancing Script", cursive;
-        font-optical-sizing: auto;
-        font-style: normal;
-        font-weight: normal;
-    }
 }

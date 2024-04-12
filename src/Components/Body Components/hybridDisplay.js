@@ -11,30 +11,22 @@ const HybridDisplay = () => {
         {HybridEvents ? (
            <>
            <h1 className='H1'>Hybrid Events</h1>
-            <div className='display'>
+           <div style={{background:"#000"}} className='display row'>
             {HybridEvents.map((event, index) => (
-            <div key={index} className='events'>
-              <img className='image' src={event.eImage} alt='' />
-              <section className='displays'>
-                <div>
-                  <h3>{event.eDay}</h3>
-                  <h3>Virtual Location: {event.VirtualLocation}</h3>
-                  <h3>Inperson Location: {event.InPersonLocation}</h3>
-                </div>
-                <div>
-                  <h2>{event.eName}</h2>
-                  <h4>{event.ePreview}</h4>
+              <section key={index} className='events col-lg-3 col-md-5 col-sm-5 col-10'>
+                <img className='image' src={event.eImage} alt='' />
+                <div className='displays'>
+                  <div style={{display:"flex",flexDirection:"column",gap:"20px"}}>
+                    <h3>{event.eName}</h3>
+                    <h5>{event.ePreview}</h5>
+                  </div>
                 </div>
               </section>
-
-              {/* Rendering share buttons for each event */}
-              {/* {renderShareButtons(event)} */}
-            </div>
-          ))}
-            </div>
+            ))}
+          </div>
            </>
         ) : (
-          <p>No hybrid events available.</p>
+          <p style={{display:"none"}}>No hybrid events available.</p>
         )}
       
     </div>

@@ -4,31 +4,30 @@ import { Link } from 'react-router-dom';
 import CEImage from '../images/image 3.png';
 import VirtualDisplay from './VirtualDisplay';
 import HybridDisplay from './hybridDisplay';
+// import { Card, CardBody, CardImg } from 'react-bootstrap';
 const DisplayData = () => {
  
   const storedDetails = localStorage.getItem('InPersonEvents');
   const details = JSON.parse(storedDetails);
 
+
+  
   return (
-    <div className='displayComp'>
+    <div className='displayComp container-fluid'>
       {details && details.length > 0 ? (
         <>
           <h1 className='H1'>InPerson Events</h1>
-          <div className='display'>
+          <div style={{background:"#000"}} className='display row'>
             {details.map((event, index) => (
-              <div key={index} className='events'>
+              <section key={index} className='events col-lg-3 col-md-5 col-sm-5 col-10'>
                 <img className='image' src={event.eImage} alt='' />
                 <div className='displays'>
-                  <div>
-                    <h3>{event.eDay}</h3>
-                    <h3>{event.eLocation}</h3>
-                  </div>
-                  <div>
-                    <h2>{event.eName}</h2>
-                    <h4>{event.ePreview}</h4>
+                  <div style={{display:"flex",flexDirection:"column",gap:"20px"}}>
+                    <h3>{event.eName}</h3>
+                    <h5>{event.ePreview}</h5>
                   </div>
                 </div>
-              </div>
+              </section>
             ))}
           </div>
           <VirtualDisplay />
@@ -48,7 +47,7 @@ const DisplayData = () => {
               <h1>Create Your Event(s)</h1>
               <p>You don't have any upcoming event(s)</p>
               <Link to={'/signUp'}>
-                <button className='btn'>Create Now</button>
+                <button className='Dbtn'>Create Now</button>
               </Link>
              
             </div>

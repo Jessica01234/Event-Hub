@@ -16,20 +16,12 @@ body {
     border-bottom: 1px solid #ccc;
   }
   
-  #CENav {
-    margin-top: -2rem;
-  }
-  
-  #DBNav {
-    margin-top: -1rem;
-  }
-
-  
   .NavLogo {
     text-decoration: none;
     font-size: 3.5rem;
     cursor: pointer;
     color: #fff;
+    text-align: center;
   }
   
   .NavbarMenu {
@@ -53,10 +45,11 @@ body {
     font-style: normal;
     line-height: normal;
     color: #fff;
+    text-align: center;
   }
   
   .NavLinks.active {
-    border-bottom: 2px solid #fff; /* You can adjust the color and thickness as needed */
+    border-bottom: 2px solid #fff;
   }
   
   .menuBar {

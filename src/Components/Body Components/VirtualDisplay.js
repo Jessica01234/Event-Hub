@@ -7,35 +7,26 @@ const VirtualDisplay = () => {
   const VirtualEvents = JSON.parse(VirtualEventsString);
 
   return (
-    <div className='displayComp'>
-      <h1>Virtual Events</h1>
-      
+    <div className='displayComp'>      
         {VirtualEvents ? (
           <>
               <h1 className='H1'>Virtual Events</h1>
-              <div className='display'>
-              {VirtualEvents.map((event, index) => (
-                <div key={index} className='events'>
-                  <img className='image' src={event.eImage} alt='' />
-                  <section className='displays'>
-                    <div>
-                      <h3>{event.eDay}</h3>
-                      <h3>{event.eLocation}</h3>
-                    </div>
-                    <div>
-                      <h2>{event.eName}</h2>
-                      <h4>{event.ePreview}</h4>
-                    </div>
-                  </section>
-
-                  {/* Rendering share buttons for each event */}
-                  {/* {renderShareButtons(event)} */}
+              <div style={{background:"#000"}} className='display row'>
+            {VirtualEvents.map((event, index) => (
+              <section key={index} className='events col-lg-3 col-md-5 col-sm-5 col-10'>
+                <img className='image' src={event.eImage} alt='' />
+                <div className='displays'>
+                  <div style={{display:"flex",flexDirection:"column",gap:"20px"}}>
+                    <h3>{event.eName}</h3>
+                    <h5>{event.ePreview}</h5>
+                  </div>
                 </div>
-              ))}
-              </div>
+              </section>
+            ))}
+          </div>
           </>
         ) : (
-          <p>No virtual events available.</p>
+          <p style={{display:"none"}}>No virtual events available.</p>
         )}
       
     </div>

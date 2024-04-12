@@ -5,18 +5,18 @@
     color: #fff;
     width: 100%;
     height: auto;
-    margin-top: 2rem;
+    padding-bottom: 3rem;
 }
 
 .h1{
     display: flex;
     justify-content: center;
-    padding-top: 4rem;
-    font-size: 3rem;
+    padding-top: 6rem;
     color: #fff;
     font-family: "Kanit", sans-serif;
-    font-weight: 900;
+    font-weight: 800;
     font-style: normal;
+    padding-bottom: 2rem;
 }
 
 .Father{
@@ -34,6 +34,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 3em;
+    padding-bottom: 3em;
 }
 
 .Mother1{
@@ -323,11 +325,35 @@
     .Mother3{
         height: auto;
     }
+
+    .Father h1{
+        font-size: 30px;
+    }
+
+    .Father p{
+        text-align: center;
+    }
 }
 
 /* MAKING THE THREE EVENTS TYPE RESPONSIVE */
 
 @media screen and (min-width: 50px) and (max-width: 849px){
+    .Father h1{
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .Father p{
+        text-align: center;
+        font-size: 50px;
+    }
+
+    .Father button{
+        font-size: 30px;
+    }
+
+
+
     .InPersonFather{
         width: 100%;
     }

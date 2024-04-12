@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import 'animate.css';
 import MenuBar from '../images/hamburger.png';
 import MenuTimes from '../images/download.png';
+import { NavDropdown } from 'react-bootstrap';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -58,10 +59,11 @@ class NavBar extends React.Component {
                 </li>
               );
             })}
-            {user ? (
-              <li className={`NavLinks ${window.location.pathname === '/profile' ? 'active' : ''}`}>
-                {user.fname}
-              </li>
+            {user ? (               
+                <NavDropdown title={user.fname} className={`NavLinks ${window.location.pathname === '/profile' ?    'active' : ''}`} id="basic-nav-dropdown">
+                    <NavDropdown.Item href="#action/3.1">Sign Out</NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.2">Date</NavDropdown.Item>
+                </NavDropdown>
             ) : (
               <li>
                 <Link to={'/signUp'} className={`NavLinks ${window.location.pathname === '/signUp' ? 'active' : ''}`}>

@@ -2,10 +2,12 @@
 .homeHero{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     color: #fff;
     width: 100%;
     background: linear-gradient(119deg, #ED4690 -2.11%, #52C 63.58%);
-    padding-top: 10rem;
+    padding-top: 8rem;
+    padding-bottom: 3em;
     gap: 5rem;
 }
 .homeVideo{
@@ -26,20 +28,22 @@
     font-size: 3rem;
     font-weight: 800;
     font-style: italic;
+    text-align: center;
 }
 
 .hero-text h4{
-    font-size: 1.2rem;
+    font-size: 30px;
+    text-align: center;
     font-style: italic;
     padding: 0.5rem 0 2rem 0;
 }
 
 .heroButton{
-    border-radius: 50px;
+    border-radius: 40px;
     background: #F5167E;
     border: none;
-    padding: 1rem 2rem;
-    font-size: larger;
+    padding: 1px 18px;
+    font-size: 20px;
     font-family: "Dancing Script", cursive;
     font-optical-sizing: auto;
     font-style: normal;
@@ -82,6 +86,11 @@
     .homeHero h4{
         font-size: 1rem;
         font-weight: bold;
+    }
+
+    .heroButton{
+        padding: 20px 30px;
+        font-size: 20px;
     }
 }
 

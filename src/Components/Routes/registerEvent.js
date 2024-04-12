@@ -1,5 +1,5 @@
 import NavBar from "../NAVBAR/navbar";
-import RegisterEventForm from "../Body Components/registerForm";
+import RegisterEventForm from "../Body Components/registerComp";
 import Footer from "../Footer Components/footer"
 function Register(){
     return (

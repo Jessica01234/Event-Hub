@@ -6,12 +6,14 @@
 .display{
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    justify-content: center;
+    /* width: 20%; */
 }
 
 .H1{
     display: flex;
     justify-content: center;
+    text-align: center;
     /* padding-top: 5rem; */
     color: #fff;
 }
@@ -19,16 +21,19 @@
 .displays{
     display: flex;
     justify-content: space-around;
+    text-align: center;
     border: 1px solid #ccc;
     border-radius: 5px;
+    padding-top: 18px;
+    margin-top: 5px;
 }
 
 .events{
-    width: 30%;
+    /* width: 30%; */
     border: 1px solid #ccc;
     border-radius: 6px;
     padding: 10px;
-    margin: 10px;
+    margin: 20px;
     background-color: #f9f9f9;
 }
 
@@ -36,7 +41,7 @@
 .image{
     width: 100%;
     height: 50vh;
-    border-radius: 18.953px 18.953px 0px 0px;
+    /* border-radius: 18.953px 18.953px 0px 0px; */
 }
 
 /* STYLING THE CREATE EVENT COMPONENET */
@@ -49,7 +54,7 @@
     gap: 10rem;
     background: #EEE1FF;
     letter-spacing: 1px;
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
     margin-bottom: 1rem;
 }
 
@@ -62,6 +67,9 @@
     justify-content: center;
     padding-top: 2rem;
     color: #fff;
+    font-weight: 600;
+    font-family: "DM Sans";
+    font-size: 20px;
 }
 .CEImage{
     max-width: 100%;
@@ -75,7 +83,19 @@
     padding-bottom: 2pc;
 }
 
-.btn{
+.CEText h1{
+    font-weight: 600;
+    font-family: "DM Sans";
+    font-size: 30px;
+}
+
+.CEText p{
+    font-weight: 600;
+    font-family: "DM Sans";
+    font-size: 18px;
+}
+
+.Dbtn{
     padding: 1rem 2rem;
     border-radius: 50px;
     background: #F5167E;
@@ -83,7 +103,7 @@
     padding: 1rem 2rem;
     font-weight: bold;
     margin-left: 3rem;
-    font-size: larger;
+    font-size: x-large;
     text-decoration: none;
     color: #fff;
     font-family: "Dancing Script", cursive;
@@ -91,7 +111,7 @@
     font-style: normal;
 }
 
-.btn:hover{
+.Dbtn:hover{
     cursor: pointer;
     color: #fff;
     /* border-radius: 0.5rem; */
@@ -101,17 +121,21 @@
     .display{
         display: flex;
         flex-wrap: wrap;
-        width: 100%;
-        gap: 3pc;
-        /* flex-direction: column; */
+        justify-content: center;
+        gap: 30px;
+    }
+    
+    .h1Container{
+        padding-top: 0rem;
     }
 
     .events{
-        width: 40%;
+        margin: 10px;
     }
     .CEDiv{
         display: flex;
         height: auto;
+        gap: 3rem;
     }
 
     .CEImage{
@@ -127,15 +151,17 @@
         width: 100%;
     }
     .CEText h1{
-        font-size: 1.3rem;
+        font-size: 1.9rem;
     }
     .CEText p{
         display: flex;
         justify-content: center;
-        font-size: 1rem;
+        font-weight: 600;
+        font-family: "DM Sans";
+        font-size: 30px;
     }
-    .btn{
-        font-size: 15px;
+    .Dbtn{
+        font-size: 30px;
         padding: 0.5rem 1rem;
         margin-left: 0;
     }
@@ -149,11 +175,15 @@
     .display{
         display: flex;
         flex-wrap: wrap;
-        width: 100%;
+        gap: 30px;
+    }
+
+    .h1Container{
+        padding-top: 0rem;
     }
 
     .events{
-        width: 100%;
+        margin: 0px;
     }
 
     .CEImage{
@@ -161,14 +191,30 @@
         align-items: center;
         width: 100%;
     }
+
+    .CEDiv{
+        gap: 2rem;
+    }
+
     .CEText{
         display: flex;
         align-items: center;
         width: 100%;
     }
-    .btn{
-        font-size: 15px;
+
+
+    .CEText h1{
+        font-size: 23px;
+    }
+
+    .CEText p{
+        text-align: center;
+    }
+
+    .Dbtn{
+        font-size: 20px;
         padding: 0.5rem 1rem;
         margin-left: 0;
+        border-radius: 10px;
     }
 }

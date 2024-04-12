@@ -1,6 +1,6 @@
 .footer{
     background: linear-gradient(119deg, #ED4690 -2.11%, #52C 63.58%);
-    margin-top: 2rem;
+    padding-top: 5rem;
 }
 .top{
     display: flex;
@@ -33,12 +33,11 @@
 .contact nav{
     display: flex;
     line-height: 5pc;
-    gap: 2pc;
+    gap: 20px;
 }
 
 section img{
     height: 7vh;
-    padding-top: 1pc;
 }
 .social img:hover,
 .contact img:hover{
@@ -91,9 +90,7 @@ section img{
 
 @media screen and (min-width: 851px) and (max-width: 1200px){
     .bottom{
-        gap: 10pc;
+        justify-content: space-evenly;
     }
-    .section img{
-        height: 10vh;
-    }
+  
 }
