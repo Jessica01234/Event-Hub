@@ -91,6 +91,7 @@ function RegisterationForm() {
 
         if (!navigator.onLine) {
             setErrorMsg("No internet connection. Please try again later.");
+            alert("Registration Sucessful");
             return;
         }
 
