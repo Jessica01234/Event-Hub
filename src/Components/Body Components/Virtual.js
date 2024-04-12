@@ -6,7 +6,7 @@ import NavBar from "../NAVBAR/navbar";
 
 function Virtual(){
 
-    const userDetailsString = localStorage.getItem('email');
+    const userDetailsString = localStorage.getItem('user');
     const userDetails = JSON.parse(userDetailsString);
 
     return(

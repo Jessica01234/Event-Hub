@@ -1,27 +1,30 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./logInComp.css";
-// import ExpandArrow from '../images/Expand Arrow.png';
 
 function LogInComponent() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   useEffect(() => {
     // Check if the user is already logged in
-    const storedEmail = sessionStorage.getItem('email');
+    const storedEmail = sessionStorage.getItem('user');
     setIsLoggedIn(!!storedEmail);
   }, []);
 
+  const navigate = useNavigate();
   const handleLogin = (event) => {
     event.preventDefault();
 
-    const storedUserString = localStorage.getItem(email);
+    const storedUserString = localStorage.getItem('user');
     const storedUser = JSON.parse(storedUserString);
 
-    if (storedUser && password === storedUser.password) {
+    if (storedUser && password === storedUser.password && email === storedUser.email) {
       sessionStorage.setItem('email', email);
       setIsLoggedIn(true);
+      console.log(sessionStorage);
+      navigate('/dashBoard');
     } else {
       alert('Invalid email or password');
     }
@@ -52,13 +55,6 @@ function LogInComponent() {
           </>
         ) : (
           <>
-            {/* <div className="homeBtn">
-             <button>Home
-              <Link to={'/'}>
-                  <img src={ExpandArrow} alt=""/>
-                </Link>
-             </button>
-            </div> */}
             <form onSubmit={handleLogin} className="logInForm">
               <h1>LOG IN</h1>
               <label className="logInLabel">Email</label>
@@ -81,7 +77,7 @@ function LogInComponent() {
               />
 
               <button type="submit" className="LogIn-Button">
-                <Link to={'/'}>Log In</Link>
+                Log In
               </button>
             </form>
           </>

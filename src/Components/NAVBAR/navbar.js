@@ -15,7 +15,7 @@ class NavBar extends React.Component {
 
   componentDidMount() {
     // Retrieving user details from local storage upon component mount
-    const userDetailsString = localStorage.getItem('email');
+    const userDetailsString = localStorage.getItem('user');
     const userDetails = JSON.parse(userDetailsString);
 
     // Checking if the user is signed in and has details
@@ -28,6 +28,15 @@ class NavBar extends React.Component {
   HandleClick = () => {
     this.setState({ Clicked: !this.state.Clicked });
   };
+
+
+
+  HandleLogout = () => {
+        const userEmail = localStorage.getItem('user');
+        sessionStorage.removeItem(userEmail); 
+        window.location.href = '/login'; 
+    };
+
 
   //Rendering the components
   render() {
@@ -61,8 +70,8 @@ class NavBar extends React.Component {
             })}
             {user ? (               
                 <NavDropdown title={user.fname} className={`NavLinks ${window.location.pathname === '/profile' ?    'active' : ''}`} id="basic-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">Sign Out</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">Date</NavDropdown.Item>
+                    <NavDropdown.Item onClick={this.HandleLogout}>Sign Out</NavDropdown.Item>
+                    <NavDropdown.Item href="dashBoard">My Events</NavDropdown.Item>
                 </NavDropdown>
             ) : (
               <li>

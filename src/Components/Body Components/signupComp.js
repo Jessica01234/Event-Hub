@@ -15,7 +15,7 @@ function SignUpComponent(){
   const usersDetailsString = JSON.stringify(usersDetails);
 
   const HandleClicked = () =>{
-    localStorage.setItem('email', usersDetailsString);
+    localStorage.setItem('user', usersDetailsString);
     console.log(localStorage);
     nav(`/?Sname=${encodeURIComponent(usersDetailsString)}`);
   }

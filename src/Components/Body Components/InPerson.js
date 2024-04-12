@@ -5,7 +5,7 @@ import './Events.css';
 import Navbar from '../NAVBAR/navbar';
 function InPerson(){
 
-    const userDetailsString = localStorage.getItem('email');
+    const userDetailsString = localStorage.getItem('user');
     const userDetails = JSON.parse(userDetailsString);
 
     return(
