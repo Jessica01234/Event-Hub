@@ -110,10 +110,10 @@ function VirtualRegisterForms() {
               </h1>
             </aside>
             <div className="father">
-              <div className="ImageContainer">
+              <div className="ImageContainer animate__animated animate__fadeIn">
                 <img className="child1" src={REGISTER} alt="" />
               </div>
-              <nav className="mother">
+              <nav className="mother animate__animated animate__fadeInUp">
                 <h1 className="child2">Your Event(s)</h1>
                 <p className="child3">You don't have any event to Register</p>
                 <button className="child4">

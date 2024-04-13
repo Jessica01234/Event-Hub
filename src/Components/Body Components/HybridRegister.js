@@ -67,10 +67,10 @@ function HybridRegisterForms() {
                 <Link to={'/register'}>INPERSON</Link>
               </h1>
               <h1>
-                <Link to={'/virtualRegister'} className={`${window.location.pathname === '/virtualRegister' ? 'active' : ''}`}>VIRTUAL</Link>
+                <Link to={'/virtualRegister'}>VIRTUAL</Link>
               </h1>
               <h1>
-                <Link to={'/hybridRegister'}>HYBRID</Link>
+                <Link to={'/hybridRegister'} className={`${window.location.pathname === 'hybridRegister' ? 'active' : ''}`}>HYBRID</Link>
               </h1>
             </aside>
 
@@ -105,17 +105,17 @@ function HybridRegisterForms() {
                 <Link to={'/register'}>INPERSON</Link>
               </h1>
               <h1>
-                <Link to={'/virtualRegister'} className={`${window.location.pathname === '/virtualRegister' ? 'active' : ''}`}>VIRTUAL</Link>
+                <Link to={'/virtualRegister'}>VIRTUAL</Link>
               </h1>
               <h1>
-                <Link to={'/hybridRegister'}>HYBRID</Link>
+                <Link to={'/hybridRegister'} className={`${window.location.pathname === '/hybridRegister' ? 'active' : ''}`}>HYBRID</Link>
               </h1>
             </aside>
             <div className="father">
-              <div className="ImageContainer">
+              <div className="ImageContainer animate__animated animate__fadeInLeft">
                 <img className="child1" src={REGISTER} alt="" />
               </div>
-              <nav className="mother">
+              <nav className="mother animate__animated animate__fadeInRight">
                 <h1 className="child2">Your Event(s)</h1>
                 <p className="child3">You don't have any event to Register</p>
                 <button className="child4">

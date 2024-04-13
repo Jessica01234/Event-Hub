@@ -11,7 +11,7 @@ function InPersonRegisterForms() {
     const eventsparse = JSON.parse(events) || [];
 
     const navigate = useNavigate();
-  const handleRegistration = () => {
+    const handleRegistration = () => {
     navigate(`/registerForm`);
   };
   
@@ -22,13 +22,13 @@ function InPersonRegisterForms() {
         <nav className="ancestor">
           <aside className="aside">
             <h1>
-              <Link to={'/register'}className={`${window.location.pathname === '/register' ? 'active' : ''}`}>INPERSON</Link>
+              <Link to={'/register'} className={`${window.location.pathname === '/register' ? 'active' : ''}`}>INPERSON</Link>
             </h1>
             <h1>
-              <Link to={'/virtualRegister'}>VIRTUAL</Link>
+              <Link to={'/virtualRegister'}className={`${window.location.pathname === '/virtualRegister' ? 'active' : ''}`}>VIRTUAL</Link>
             </h1>
             <h1>
-              <Link to={'/hybridRegister'}>HYBRID</Link>
+              <Link to={'/hybridRegister'}className={`${window.location.pathname === '/hybridRegister' ? 'active' : ''}`}>HYBRID</Link>
             </h1>
           </aside>
   
@@ -57,10 +57,10 @@ function InPersonRegisterForms() {
         <section className="GrandFather">
           <aside className="aside">
               <h1>
-                <Link to={'/register'}>INPERSON</Link>
+                <Link to={'/register'} className={`${window.location.pathname === '/register' ? 'active' : ''}`}>INPERSON</Link>
               </h1>
               <h1>
-                <Link to={'/virtualRegister'}className={`${window.location.pathname === '/virtualRegister' ? 'active' : ''}`}>VIRTUAL</Link>
+                <Link to={'/virtualRegister'}>VIRTUAL</Link>
               </h1>
               <h1>
                 <Link to={'/hybridRegister'}>HYBRID</Link>
