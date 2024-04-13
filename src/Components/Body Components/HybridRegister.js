@@ -70,7 +70,7 @@ function HybridRegisterForms() {
                 <Link to={'/virtualRegister'}>VIRTUAL</Link>
               </h1>
               <h1>
-                <Link to={'/hybridRegister'} className={`${window.location.pathname === 'hybridRegister' ? 'active' : ''}`}>HYBRID</Link>
+                <Link to={'/hybridRegister'} className={`${window.location.pathname === '/hybridRegister' ? 'active' : ''}`}>HYBRID</Link>
               </h1>
             </aside>
 

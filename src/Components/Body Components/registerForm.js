@@ -12,9 +12,9 @@ function RegisterationForm() {
 
     const updateAttendeesDetailInLocalStorage = (newEvent) => {
         // setLoading(true);
-        const existingEvents = JSON.parse(localStorage.getItem('Attendee')) || [];
-        const updatedEvents = [...existingEvents, newEvent];
-        localStorage.setItem('Attendee', JSON.stringify(updatedEvents));
+        const existingAttendee = JSON.parse(localStorage.getItem('Attendee')) || [];
+        const updatedAttendee = [...existingAttendee, newEvent];
+        localStorage.setItem('Attendee', JSON.stringify(updatedAttendee));
         // setLoading(false);
         console.log(localStorage);
     };
