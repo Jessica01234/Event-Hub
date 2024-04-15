@@ -1,35 +1,32 @@
 import React, { useState } from "react";
 import "./RegisterForm.css";
 import { useNavigate } from "react-router-dom";
-// import { Spinner } from "react-bootstrap";
+
 
 function RegisterationForm() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
-    // const [loading, setLoading] = useState(false);
-    // const [errorMsg, setErrorMsg] = useState("");
+    
     const navigate = useNavigate();
 
     const updateAttendeesDetailInLocalStorage = (newEvent) => {
-        // setLoading(true);
+       
         const existingAttendee = JSON.parse(localStorage.getItem('Attendee')) || [];
         const updatedAttendee = [...existingAttendee, newEvent];
         localStorage.setItem('Attendee', JSON.stringify(updatedAttendee));
-        // setLoading(false);
         console.log(localStorage);
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        // if (!navigator.onLine) {
-        //     setErrorMsg("No internet connection. Please try again later.");
-        //     alert("Registration Sucessful");
-        //     return;
-        // }
-
-        // setLoading(true); 
-        // setErrorMsg("");
+        if (!navigator.onLine) {
+           return(
+            <p>No internet connection. Please try again later.</p>
+           )
+        }else if(navigator.onLine){
+            alert("Registration Sucessful");
+        }
 
         const AttendeesDetail = {
             name: name,
@@ -60,11 +57,6 @@ function RegisterationForm() {
                     </div>
 
                     <button type="submit" className="RegBtn">Register</button>
-                    {/* {loading ? (
-                    <Spinner animation="border" variant="light" />
-                    ) : (
-                    <p style={{color:"#fff"}}>{errorMsg}</p>
-                    )}  */}
                 </form>
             </div>
         </>
