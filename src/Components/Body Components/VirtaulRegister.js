@@ -51,7 +51,7 @@ function VirtualRegisterForms() {
 
   const navigate = useNavigate();
   const handleRegistration = () => {
-    navigate(`/registerForm`);
+    navigate(`/form`);
   };
 
   return (
@@ -87,7 +87,7 @@ function VirtualRegisterForms() {
                      <section className="btnSection">
                         <button className="reg-btn" onClick={handleRegistration}>
                             Register Now
-                          </button>
+                        </button>
                           {renderShareButtons(event)}
                      </section>
                     </div>

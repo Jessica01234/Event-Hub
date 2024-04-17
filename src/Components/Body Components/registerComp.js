@@ -12,7 +12,7 @@ function InPersonRegisterForms() {
 
     const navigate = useNavigate();
     const handleRegistration = () => {
-    navigate(`/registerForm`);
+    navigate(`/form`);
   };
   
 

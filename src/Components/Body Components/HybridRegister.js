@@ -53,7 +53,7 @@ function HybridRegisterForms() {
   const navigate = useNavigate();
 
   const handleRegistration = () => {
-    navigate(`/registerForm`);
+    navigate(`/form`);
   };
 
   return (
