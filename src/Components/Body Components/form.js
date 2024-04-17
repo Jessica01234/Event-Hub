@@ -3,7 +3,7 @@ import "./RegisterForm.css";
 import { useNavigate } from "react-router-dom";
 
 
-function RegisterationForm() {
+function Form() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     // const [errormsg, setErrormsg] = useState("");
@@ -62,4 +62,4 @@ function RegisterationForm() {
     );
 }
 
-export default RegisterationForm;
+export default Form;
