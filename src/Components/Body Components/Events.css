@@ -8,14 +8,14 @@
     padding-bottom: 3rem;
 }
 
-.h1{
+.eventsh1{
     display: flex;
     justify-content: center;
     padding-top: 6rem;
     color: #fff;
     font-family: "Kanit", sans-serif;
-    font-weight: 800;
-    font-style: normal;
+    font-size: 50px;
+    font-weight: 600;
     padding-bottom: 2rem;
 }
 
@@ -67,6 +67,7 @@
     font-family: "Kanit", sans-serif;
     font-weight: 800;
     font-style: normal;
+    text-align: center;
 }
 
 .Father p{
@@ -279,17 +280,7 @@
     font-style: normal;
 }
 
-@media screen and (min-width: 280px) and (max-width: 850px){
-    .h1{
-        font-size: 1.5rem;
-    }
-    .Father h1{
-        font-size: 1.3em;
-    }
-    .Father p{
-        font-size: large;
-    }
-
+@media screen and (min-width: 50px) and (max-width: 850px){
     .Father {
         display: flex;
         flex-direction: column;
@@ -302,7 +293,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: calc(100% - 6em);
+        width: calc(100% - 4em);
         height: auto;
         margin: 2em;
         box-sizing: border-box;
@@ -333,11 +324,21 @@
     .Father p{
         text-align: center;
     }
+
+    .eventsh1{
+        padding-top: 9rem;
+    }
 }
 
 /* MAKING THE THREE EVENTS TYPE RESPONSIVE */
 
 @media screen and (min-width: 50px) and (max-width: 849px){
+    .eventsh1{
+        font-size: 35px;
+        font-weight: 800;
+        text-align: center;
+    }
+
     .Father h1{
         font-size: 40px;
         text-align: center;
@@ -345,11 +346,11 @@
 
     .Father p{
         text-align: center;
-        font-size: 50px;
+        font-size: 30px;
     }
 
     .Father button{
-        font-size: 30px;
+        font-size: 25px;
     }
 
 

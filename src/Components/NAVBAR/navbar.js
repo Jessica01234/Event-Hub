@@ -45,11 +45,7 @@ class NavBar extends React.Component {
     return (
       <>
         <div id={this.props.cName} className='NavbarItems'>
-          <h1 className='NavbarLogo'>
-            <Link to={"/"} className='NavLogo'>
-              Event Hub
-            </Link>
-          </h1>
+          <h1 className='NavLogo'>Event Hub</h1>
 
           <div onClick={this.HandleClick} className='MenuIcons'>
             <img className='menuBar' src={this.state.Clicked ? MenuTimes : MenuBar} alt='' />

@@ -159,6 +159,7 @@
         font-weight: 600;
         font-family: "DM Sans";
         font-size: 30px;
+        text-align: center;
     }
     .Dbtn{
         font-size: 30px;
@@ -171,7 +172,7 @@
     }
 }
 
-@media screen and (min-width: 100px) and (max-width: 500px){
+@media screen and (min-width: 50px) and (max-width: 500px){
     .display{
         display: flex;
         flex-wrap: wrap;
@@ -216,5 +217,12 @@
         padding: 0.5rem 1rem;
         margin-left: 0;
         border-radius: 10px;
+    }
+}
+
+
+@media screen and (min-width: 851px) and (max-width: 930px){
+    .h1Container{
+        padding-top: 5rem;
     }
 }

@@ -19,7 +19,6 @@ body {
   .NavLogo {
     text-decoration: none;
     font-size: 3.5rem;
-    cursor: pointer;
     color: #fff;
     text-align: center;
   }
@@ -111,3 +110,32 @@ body {
     }
   }
   
+
+
+  /* STYLING THE LANDING PAGE NAVBAR */
+
+  .homeNav{
+    background: linear-gradient(119deg, #ED4690 -2.11%, #52C 80.58%);
+  }
+
+
+  .HomeNavLogo{
+    text-decoration: none;
+    font-size: 3.5rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.get-started{
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 25px;
+  font-weight: 600;
+  background: #fff;
+}
+
+.get-started a{
+  text-decoration: none;
+  color: #000;
+}

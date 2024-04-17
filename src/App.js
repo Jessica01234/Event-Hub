@@ -14,7 +14,7 @@ import HybridForm from './Components/Body Components/hybridForm';
 import InPersonRegisterForms from './Components/Body Components/registerComp';
 import VirtualRegisterForms from './Components/Body Components/VirtaulRegister';
 import HybridRegisterForms from './Components/Body Components/HybridRegister';
-// import RegisterationForm from './Components/Body Components/RegisterForm';
+import RegisterationForm from './Components/Body Components/RegisterForm';
 function App(){
     return(
         <div>
@@ -34,9 +34,8 @@ function App(){
                     <Route path='/hybridForm' element={<HybridForm/>}/>
                     <Route path="/register" element={<InPersonRegisterForms/>}/>
                     <Route path='/virtualRegister' element={<VirtualRegisterForms/>}/>
-                    {/* <Route path='/registerForm' element={<RegisterationForm/>}/> */}
                     <Route path='/hybridRegister' element={<HybridRegisterForms/>}/>
-                    {/* <Route path='/registerForm' element={<RegisterationForm/>}/> */}
+                    <Route path='/registerForm' element={<RegisterationForm/>}/>
                 </Routes>
             </BrowserRouter>
         </div>

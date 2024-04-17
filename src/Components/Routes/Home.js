@@ -1,27 +1,26 @@
 import React from "react";
-import NavBar from "../NAVBAR/navbar";
+// import NavBar from "../NAVBAR/navbar";
+import LandingPageNavbar from "../NAVBAR/homeNavbar";
 import Hero from "../Hero component/Hero";
-// import HomeImg from "../images/home.png";
 import HomeVideo from '../Assets/banner-intro.webm';
-// import DisplayData from "../Body Components/displayData";
-import Events from "../Body Components/Events";
-import Footer from "../Footer Components/footer";
+// import Events from "../Body Components/Events";
+// import Footer from "../Footer Components/footer";
 import 'animate.css';
 
 function Home(){
     return(
         <>
-            <NavBar />
+            {/* <NavBar /> */}
+            <LandingPageNavbar />
             <Hero 
                 cName = "homeHero animate__animated animate__fadeIn"
                 heroImg = {HomeVideo}
-                text1 = "ALL-IN-ONE EVENT MANAGEMENT SOFTWARE"
+                text1 = "ALL-IN-ONE EVENT MANAGEMENT WEB APPLICATION"
                 text2 = "Start Planning Today!"
                 btn = "SIGN UP FOR FREE"
                 />
-                {/* <DisplayData /> */}
-                <Events />
-            <Footer />
+                {/* <Events /> */}
+                {/* <Footer /> */}
         </>
 
     )

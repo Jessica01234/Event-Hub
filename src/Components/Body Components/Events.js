@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 function Events(){
     return(
         <div className="Ancestor animate__animated animate__fadeInUp">
-            <h1 className="h1">Simple ways to host all your events</h1>
+            <h1 className="eventsh1">Simple ways to host all your events</h1>
            <nav className="Father">
                 <section className="Mother1">
                     <h1>In-person events</h1>
