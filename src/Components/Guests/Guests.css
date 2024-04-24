@@ -1,0 +1,13 @@
+.TableComponent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.homeBtn{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+    padding-right: 20px;
+}

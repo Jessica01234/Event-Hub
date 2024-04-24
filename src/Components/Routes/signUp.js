@@ -1,15 +1,15 @@
 import React from "react";
-import NavBar from "../NAVBAR/navbar";
+// import NavBar from "../NAVBAR/navbar";
 import SignUpComponent from "../Body Components/signupComp";
-import Footer from "../Footer Components/footer";
+// import Footer from "../Footer Components/footer";
 
 function SignUp(){
 
     return(
         <>
-        <NavBar cName="SUNav"/>
+        {/* <NavBar cName="SUNav"/> */}
         <SignUpComponent/>
-        <Footer />
+        {/* <Footer /> */}
         </>
         )
 }

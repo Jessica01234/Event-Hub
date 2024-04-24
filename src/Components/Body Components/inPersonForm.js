@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./inPersonForm.css";
 
@@ -7,10 +7,15 @@ function InPersonForm() {
   const [eImage, setEimage] = useState('');
   const [eDay, setEday] = useState('');
   const [ePreview, setEpreview] = useState(''); 
-  const [eLocation, setElocation] = useState(''); 
+  const [eLocation, setElocation] = useState('');
+  const [eventId, setEventId] = useState('');
 
   const navigate = useNavigate();
 
+
+  const generateUniqueId = () => {
+    return Math.random().toString(36).substr(2, 9);
+  };
 
   const updateEventsInLocalStorage = (newEvent) => {
     // Retrieve existing events from localStorage
@@ -29,12 +34,14 @@ function InPersonForm() {
     event.preventDefault();
   
     const userDetails = {
+      id: eventId,
       eName: eName,
       eImage: eImage,
       eDay: eDay,
       ePreview: ePreview,
       eLocation: eLocation
     };
+    console.log(userDetails);
 
     updateEventsInLocalStorage(userDetails);
   
@@ -57,6 +64,12 @@ function InPersonForm() {
       reader.readAsDataURL(file);
     }
   };
+
+    // Generate unique ID when component mounts
+    useEffect(() => {
+      const id = generateUniqueId();
+      setEventId(id);
+    }, []);
 
   return (
     <>

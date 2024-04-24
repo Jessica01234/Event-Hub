@@ -11,11 +11,19 @@ import Hybrid from './Components/Body Components/Hybrid';
 import InPersonForm from './Components/Body Components/inPersonForm';
 import VirtualForm from './Components/Body Components/virtualForm';
 import HybridForm from './Components/Body Components/hybridForm';
-import InPersonRegisterForms from './Components/Body Components/registerComp';
+import InPersonRegisterForms from './Components/Body Components/InpersonRegister';
 import VirtualRegisterForms from './Components/Body Components/VirtaulRegister';
 import HybridRegisterForms from './Components/Body Components/HybridRegister';
-// import RegisterationForm from './Components/Body Components/RegisterForm';
-import Form from './Components/Body Components/form';
+import InpersonDisplay from './Components/Body Components/inpersonDisplay';
+import HybridDisplay from './Components/Body Components/hybridDisplay';
+import VirtualDisplay from './Components/Body Components/VirtualDisplay';
+import InpersonEventForm from "./Components/RegisterForm/I-Form";
+import VirtualEventForm from "./Components/RegisterForm/V-Form";
+import HybridEventForm from "./Components/RegisterForm/H-Form";
+import InpersonGuests from './Components/Guests/inpersonGuest';
+import VirtualGuests from './Components/Guests/virtualGuests';
+import HybridGuests from './Components/Guests/hybridGuests';
+
 function App(){
     return(
         <div>
@@ -36,8 +44,15 @@ function App(){
                     <Route path="/register" element={<InPersonRegisterForms/>}/>
                     <Route path='/virtualRegister' element={<VirtualRegisterForms/>}/>
                     <Route path='/hybridRegister' element={<HybridRegisterForms/>}/>
-                    {/* <Route path='/registerForm' element={<RegisterationForm/>}/> */}
-                    <Route path='/form' element={<Form/>}/>
+                    <Route path='/dashboard' element={<InpersonDisplay/>}/>
+                    <Route path='/hybridDisplay' element={<HybridDisplay/>}/>
+                    <Route path='/virtualDisplay' element={<VirtualDisplay/>}/>
+                    <Route path="/InpersonEventForm/:eventId" element={<InpersonEventForm />} />
+                    <Route path='/VirtualEventForm/:eventId' element={<VirtualEventForm/>}/>
+                    <Route path='/HybridEventForm/:eventId' element={<HybridEventForm/>}/>
+                    <Route path='/inpersonGuests' element={<InpersonGuests/>}/>
+                    <Route path='/virtualGuests' element={<VirtualGuests/>}/>
+                    <Route path='/hybridGuests' element={<HybridGuests/>}/>
                 </Routes>
             </BrowserRouter>
         </div>

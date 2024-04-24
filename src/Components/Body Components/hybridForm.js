@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./inPersonForm.css";
 // import ExpandArrow from '../images/Expand Arrow.png';
@@ -11,8 +11,15 @@ function HybridForm() {
   const [ePreview, setEpreview] = useState(''); 
   const [VirtualLocation, setVirtualLocation] = useState(''); 
   const [InPersonLocation, setInpersonLocation] = useState('');
+  const [eventId, setEventId] = useState('');
 
   const navigate = useNavigate();
+
+
+  // Function to generate a unique ID
+  const generateUniqueId = () => {
+    return Math.random().toString(36).substr(2, 9);
+  };
 
 
   const updateEventsInLocalStorage = (newEvent) => {
@@ -31,6 +38,7 @@ function HybridForm() {
     event.preventDefault();
   
     const userDetails = {
+      id: eventId,
       eName: eName,
       eImage: eImage,
       eDay: eDay,
@@ -38,11 +46,12 @@ function HybridForm() {
       VirtualLocation: VirtualLocation,
       InPersonLocation: InPersonLocation
     };
+    console.log(userDetails);
 
     updateEventsInLocalStorage(userDetails);
   
     // Navigate to the dashboard with the updated events as a query parameter
-    navigate(`/dashboard`);
+    navigate(`/hybridDisplay`);
   };
   
   
@@ -60,6 +69,12 @@ function HybridForm() {
       reader.readAsDataURL(file);
     }
   };
+
+  // Generate unique ID when component mounts
+  useEffect(() => {
+    const id = generateUniqueId();
+    setEventId(id);
+  }, []);
 
   return (
     <>

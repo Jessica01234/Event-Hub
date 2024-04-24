@@ -1,11 +1,11 @@
 import NavBar from "../NAVBAR/navbar";
-import RegisterEventForm from "../Body Components/registerComp";
+import InpersonRegisterForm from "../Body Components/InpersonRegister";
 import Footer from "../Footer Components/footer"
 function Register(){
     return (
         <div>
             <NavBar cName="RENav"/>
-            <RegisterEventForm />
+            <InpersonRegisterForm />
             <Footer />
         </div>
     )

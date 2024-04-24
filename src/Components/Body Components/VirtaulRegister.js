@@ -1,7 +1,7 @@
 import React from "react";
 import './registerComp.css';
 import REGISTER from '../images/Rectangle 14.png';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import NavBar from "../NAVBAR/navbar";
 import { WhatsappShareButton, TelegramShareButton, FacebookShareButton } from 'react-share';
 import ShareImage from "../images/Share-Icons.jpg";
@@ -12,7 +12,7 @@ function VirtualRegisterForms() {
 
   function renderShareButtons(event) {
     const location = event.eLocation;
-    const decodedLink = decodeURIComponent('https://event-mgt.vercel.app');
+    const decodedLink = decodeURIComponent('https://event-hubs.vercel.app/register');
     const shareMessage = `Check out my upcoming ${event.eName} event on ${event.eDay} at ${event.eLocation}. It's about: ${event.ePreview}. Link: ${decodedLink}`;
 
     if (location === 'WhatsApp') {
@@ -48,11 +48,7 @@ function VirtualRegisterForms() {
     }
     return null;
   }
-
-  const navigate = useNavigate();
-  const handleRegistration = () => {
-    navigate(`/form`);
-  };
+  
 
   return (
     <>
@@ -73,7 +69,7 @@ function VirtualRegisterForms() {
             </aside>
 
             <div>
-              <h1 className="GrandFatherh1">My InPerson Events</h1>
+              <h1 className="GrandFatherh1">My Virtual Events</h1>
               <div className="reg">
                 {eventsparse.map((event, index) => (
                   <div key={index} className="registerComp">
@@ -85,9 +81,9 @@ function VirtualRegisterForms() {
                         <h4>At {event.eLocation}</h4>
                       </section>
                      <section className="btnSection">
-                        <button className="reg-btn" onClick={handleRegistration}>
-                            Register Now
-                        </button>
+                     <Link to={`/VirtualEventForm/${event.id}`} className="reg-btn"> 
+                          Register Now
+                      </Link>
                           {renderShareButtons(event)}
                      </section>
                     </div>

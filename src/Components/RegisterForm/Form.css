@@ -62,7 +62,7 @@
 
 .RegBtn{
     width: 30%;
-    height: 7vh;
+    height: 10vh;
     border: none;
     border: 1px solid gray;
     background-color: #49c1a2;
@@ -74,4 +74,10 @@
 
 .RegBtn:hover{
     color: #fff;
+}
+
+@media screen and  (min-width: 50px) and (max-width: 850px) {
+    .regForm{
+        width: 100%;
+    }
 }

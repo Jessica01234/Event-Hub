@@ -26,10 +26,10 @@ function SignUpComponent(){
             <form className="formSignup">
             <h1>Sign UP</h1>
                 <label>Surname</label>
-                <input id="SnameInput" type="name" required placeholder="Sylvester" onChange={(e) => setusersDetails({...usersDetails, Sname: e.target.value})}/>
+                <input id="SnameInput" type="text" required placeholder="Sylvester" onChange={(e) => setusersDetails({...usersDetails, Sname: e.target.value})}/>
 
                 <label>First Name</label>
-                <input id="FnameInput" type="name" required placeholder="Jessica" onChange={(e) => setusersDetails({...usersDetails, fname: e.target.value})}/>
+                <input id="FnameInput" type="text" required placeholder="Jessica" onChange={(e) => setusersDetails({...usersDetails, fname: e.target.value})}/>
 
                 <label>Email</label>
                 <input id="emailInput"required type="email" placeholder="example@gmail.com" onChange={(e) => setusersDetails({...usersDetails, email: e.target.value})}/>

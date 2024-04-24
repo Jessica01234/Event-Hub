@@ -1,14 +1,14 @@
 import React from "react";
 import NavBar from "../NAVBAR/navbar";
 import 'animate.css';
-import DisplayData from "../Body Components/displayData";
+import InpersonDisplay from "../Body Components/inpersonDisplay";
 import Footer from "../Footer Components/footer";
 
 function Service(){
     return(
         <>
             <NavBar cName="DBNav"/>
-            <DisplayData />
+            <InpersonDisplay />
             <Footer />
         </>
     )

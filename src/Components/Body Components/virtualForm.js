@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./inPersonForm.css";
 
@@ -8,26 +8,20 @@ function VirtualForm() {
   const [eDay, setEday] = useState('');
   const [ePreview, setEpreview] = useState(''); 
   const [eLocation, setElocation] = useState(''); 
+  const [eventId, setEventId] = useState('');
 
   const navigate = useNavigate();
 
-
-  const updateEventsInLocalStorage = (newEvent) => {
-    // Retrieve existing events from localStorage
-    const existingEvents = JSON.parse(localStorage.getItem('VirtualEvents')) || [];
-  
-    // Append the new event to the existing events
-    const updatedEvents = [...existingEvents, newEvent];
-  
-    // Store the updated events in localStorage
-    localStorage.setItem('VirtualEvents', JSON.stringify(updatedEvents));
-    console.log(localStorage);
+  // Function to generate a unique ID
+  const generateUniqueId = () => {
+    return Math.random().toString(36).substr(2, 9);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
   
     const userDetails = {
+      id: eventId,
       eName: eName,
       eImage: eImage,
       eDay: eDay,
@@ -38,10 +32,20 @@ function VirtualForm() {
     updateEventsInLocalStorage(userDetails);
   
     // Navigate to the dashboard with the updated events as a query parameter
-    navigate(`/dashboard`);
+    navigate(`/virtualDisplay`);
   };
+
+  const updateEventsInLocalStorage = (newEvent) => {
+    // Retrieve existing events from localStorage
+    const existingEvents = JSON.parse(localStorage.getItem('VirtualEvents')) || [];
   
+    // Append the new event to the existing events
+    const updatedEvents = [...existingEvents, newEvent];
   
+    // Store the updated events in localStorage
+    localStorage.setItem('VirtualEvents', JSON.stringify(updatedEvents));
+  };
+
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     
@@ -56,6 +60,12 @@ function VirtualForm() {
       reader.readAsDataURL(file);
     }
   };
+
+  // Generate unique ID when component mounts
+  useEffect(() => {
+    const id = generateUniqueId();
+    setEventId(id);
+  }, []);
 
   return (
     <>

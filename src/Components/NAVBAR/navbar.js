@@ -66,8 +66,9 @@ class NavBar extends React.Component {
             })}
             {user ? (               
                 <NavDropdown title={user.fname} className={`NavLinks ${window.location.pathname === '/profile' ?    'active' : ''}`} id="basic-nav-dropdown">
-                    <NavDropdown.Item onClick={this.HandleLogout}>Sign Out</NavDropdown.Item>
-                    <NavDropdown.Item href="dashBoard">My Events</NavDropdown.Item>
+                    {/* <NavDropdown.Item href="dashBoard">My Events</NavDropdown.Item> */}
+                    <NavDropdown.Item href="inpersonGuests">My Guests</NavDropdown.Item>
+                    <NavDropdown.Item onClick={this.HandleLogout} style={{color:"red"}}>Sign Out</NavDropdown.Item>
                 </NavDropdown>
             ) : (
               <li>

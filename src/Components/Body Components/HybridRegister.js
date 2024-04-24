@@ -1,7 +1,7 @@
 import React from "react";
 import './registerComp.css';
 import REGISTER from '../images/Rectangle 14.png';
-import {Link, useNavigate} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import NavBar from "../NAVBAR/navbar";
 import { WhatsappShareButton, TelegramShareButton, FacebookShareButton } from 'react-share';
 import ShareImage from "../images/Share-Icons.jpg";
@@ -10,11 +10,12 @@ import ShareImage from "../images/Share-Icons.jpg";
 function HybridRegisterForms() {
   const events = localStorage.getItem('HybridEvents');
   const eventsparse = JSON.parse(events) || [];
+  console.log(eventsparse);
 
   function renderShareButtons(event) {
     const location = event.VirtualLocation;
-    const decodedLink = decodeURIComponent('https://event-mgt.vercel.app');
-    const shareMessage = `Check out my upcoming ${event.eName} event on ${event.eDay} at ${event.eLocation}. It's about: ${event.ePreview}. Link: ${decodedLink}`;
+    const decodedLink = decodeURIComponent('https://event-hubs.vercel.app/hybridRegister');
+    const shareMessage = `Check out my upcoming ${event.eName} event on ${event.eDay} physically at ${event.InPersonLocation} also live on ${event.VirtualLocation}. It's about: ${event.ePreview}. Link: ${decodedLink}`;
 
     if (location === 'WhatsApp') {
       return (
@@ -50,11 +51,6 @@ function HybridRegisterForms() {
     return null;
   }
 
-  const navigate = useNavigate();
-
-  const handleRegistration = () => {
-    navigate(`/form`);
-  };
 
   return (
     <>
@@ -84,12 +80,13 @@ function HybridRegisterForms() {
                       <img src={event.eImage} alt="" />
                       <section style={{ display: "flex", flexDirection: "column", alignItems: "center", border: "1px solid #ccc",borderRadius: "6px", padding: "20px", margin: "10px" }}>
                         <h4>Happening On {event.eDay}</h4>
-                        <h4>At {event.eLocation}</h4>
+                        <h4>Physically At {event.InPersonLocation}</h4>
+                        <h4>Live on {event.VirtualLocation}</h4>
                       </section>
                      <section className="btnSection">
-                      <button className="reg-btn" onClick={handleRegistration}>
+                     <Link to={`/HybridEventForm/${event.id}`} className="reg-btn"> 
                           Register Now
-                        </button>
+                      </Link>
                         {renderShareButtons(event)}
                      </section>
                     </div>

@@ -38,7 +38,7 @@
     padding: 0.5rem 0 2rem 0;
 }
 
-.heroButton{
+/* .heroButton{
     border-radius: 40px;
     background: #F5167E;
     border: none;
@@ -52,7 +52,7 @@
 .hero-text button a{
     text-decoration: none;
     color: #fff;
-}
+} */
 
 
 
@@ -88,35 +88,8 @@
         font-weight: bold;
     }
 
-    .heroButton{
+    /* .heroButton{
         padding: 20px 30px;
         font-size: 20px;
-    }
-}
-
-
-/* STYLING THE SERVICE HERO SECTION */
-
-.DBHero{
-    width: 100%;
-    height: 70vh;
-}
-
-.DBHero img{
-    width: 100%;
-    height: 70vh;
-}
-
-/* STYLING THE SIGNUP HERO SECTION */
-
-.signUpHero{
-    background-color: #344a72;
-    position: relative;
-    height: 100vh;
-    margin-top: 5rem;
-    border: 7px solid blue;
-}
-
-.signUpHero button{
-    display: none;
+    } */
 }

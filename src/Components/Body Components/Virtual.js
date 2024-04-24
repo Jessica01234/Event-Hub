@@ -14,7 +14,7 @@ function Virtual(){
        <NavBar />
         <div className="VirtualAncestor">
             <section className="VirtualFather">
-                <h1>Create memorable virtual experiences with Event Mgt</h1>
+                <h1>Create memorable virtual experiences with Hub</h1>
                 <p>Where's your next event happening? At home—because that's where it's the safest.</p>
                 {/* Rendering share buttons for each event */}
                 {renderShareButtons()}

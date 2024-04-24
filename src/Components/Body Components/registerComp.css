@@ -164,10 +164,6 @@ aside a.active{
 }
 @media screen and (min-width: 280px) and (max-width: 850px){
 
-    .GrandFather{
-        padding-top: 3.4pc;
-    }
-
     .father{
         width: 100%;
     }
@@ -197,11 +193,15 @@ aside a.active{
 @media screen and (min-width: 600px) and (max-width: 1200px){
     .ancestor{
             width: 100%;
-            padding-top: 5pc;
+            padding-top: 3.4pc;
         }
 
     .registerComp{
         width: 45%;
+    }
+
+    .GrandFather{
+        padding-top: 3.5rem;
     }
 
     .reg{
@@ -242,10 +242,15 @@ aside a.active{
 @media screen and (min-width: 100px) and (max-width: 600px){
     .ancestor{
         width: 100%;
-        padding-top: 5pc;
+        padding-top: 3.5pc;
     }
     .registerComp{
         width: 100%;
+        padding-top: 0;
+    }
+
+    .GrandFather{
+        padding-top: 3.5rem;
     }
 
     .reg{
@@ -281,5 +286,15 @@ aside a.active{
         font-optical-sizing: auto;
         font-style: normal;
         font-weight: normal;
+    }
+}
+
+@media screen and (min-width: 851px) and (max-width: 930px){
+    .GrandFather{
+        padding-top: 9.1rem;
+    }
+    
+    .ancestor{
+        padding-top: 9.1rem;
     }
 }

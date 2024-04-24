@@ -14,7 +14,7 @@ function Footer(){
                 <section className="Info">
                     <h1>Event Hub</h1>
                     <p>Hub is an event managing platform</p>
-                    <p>for memorable experiences in Nigeria.</p>
+                    <p>for memorable experience.</p>
                 </section>
 
                 <section className="contact">

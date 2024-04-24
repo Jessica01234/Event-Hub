@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import './Hero.css';
 
 function Hero(props){
@@ -10,9 +10,9 @@ function Hero(props){
             <div className='hero-text animate__animated animate__fadeInRight'>
                 <h1>{props.text2}</h1>
                 <h4>{props.text1}</h4>
-                <button className='heroButton'>
+                {/* <button className='heroButton'>
                    <Link to={'/signUp'}>{props.btn}</Link>
-                </button>
+                </button> */}
             </div>
         </nav>
      </>
