@@ -6,7 +6,7 @@ function LandingPageNavbar() {
   return (
     <Navbar expand="sm" className="homeNav">
       <Container>
-        <h1 href="/" className='HomeNavLogo'>Event Hub</h1>
+        <h1 href="/" className='HomeNavLogo'>Hub</h1>
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <button className='get-started'>

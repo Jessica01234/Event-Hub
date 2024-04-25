@@ -12,9 +12,9 @@ function Footer(){
         <div className="footer">
             <div className="bottom">
                 <section className="Info">
-                    <h1>Event Hub</h1>
+                    <h1>Hub</h1>
                     <p>Hub is an event managing platform</p>
-                    <p>for memorable experience.</p>
+                    <p>Where you can create and manage Your events with ease.</p>
                 </section>
 
                 <section className="contact">
